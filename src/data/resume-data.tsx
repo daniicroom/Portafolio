@@ -207,7 +207,6 @@ export const RESUME_DATA = {
       title: "Evercast",
       techStack: [
         "Lead Frontend Developer",
-
         "TypeScript",
         "React",
         "Node.js",
@@ -257,16 +256,22 @@ export const RESUME_DATA = {
     {
       title: "Ambit",
       techStack: ["Lead Android Developer", "Android", "Kotlin"],
-      description:
-        "Android application that helps with sharing your contact details",
+      description: "Android application that helps with sharing your contact details",
       logo: AmbitLogo,
+      link: {
+        label: "",
+        href: "#",
+      },
     },
     {
       title: "Bim",
       techStack: ["Lead Android Developer", "Android", "Kotlin"],
-      description:
-        "Android application that helps with booking a table in a restaurants",
+      description: "Android application that helps with booking a table in a restaurants",
       logo: BimLogo,
+      link: {
+        label: "",
+        href: "#",
+      },
     },
     {
       title: "Canal Digital GO",
@@ -274,6 +279,10 @@ export const RESUME_DATA = {
       description:
         "Video streaming mobile application for Canal Digital subscribers",
       logo: CDGOLogo,
+      link: {
+        label: "",
+        href: "#",
+      },
     },
   ],
 } as const;
