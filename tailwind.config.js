@@ -51,11 +51,28 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        header: "#1E293B",  // Color para el encabezado
+        textPrimary: "#E2E8F0",  // Color de texto primario
+        textSecondary: "#94A3B8",  // Color de texto secundario
+        link: "#2563EB",  // Color de enlaces
+        badgeBg: "#F3F4F6",  // Fondo de las insignias
+        badgeText: "#1F2937",  // Texto de las insignias
+        socialIcon: "#64748B",  // Color de los íconos sociales
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        xl: "1rem",
+        full: "9999px",
+      },
+      spacing: {
+        18: "4.5rem",
+        22: "5.5rem",
+      },
+      fontSize: {
+        xxs: "0.65rem",
+        xxl: "1.75rem",
       },
       keyframes: {
         "accordion-down": {
@@ -74,4 +91,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
