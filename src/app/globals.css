@@ -1,14 +1,25 @@
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #149ddd;
+  --secondary-color: #173b6c;
+  --light-color: #f5f8fd;
+  --dark-color: #272829;
+  --dark-background: #040b14;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
-  color: #272829;
+  color: var(--dark-color);
+  background-color: var(--light-color);
 }
 
 a {
-  color: #149ddd;
+  color: var(--primary-color);
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 a:hover {
@@ -16,13 +27,51 @@ a:hover {
   text-decoration: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
+  color: var(--secondary-color);
+}
+
+/* Custom components */
+.progress-bar {
+  height: 10px;
+  border-radius: 5px;
+  background-color: #e8edf5;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  transition: width 0.6s ease;
+}
+
+/* Portfolio filter */
+.filter-active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    position: static;
+  }
+  main {
+    margin-left: 0;
+    padding: 1rem;
+  }
 }
 
 /*--------------------------------------------------------------

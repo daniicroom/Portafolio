@@ -17,7 +17,7 @@ import {
   TastyCloudLogo,
   YearProgressLogo,
 } from "@/img/logos";
-import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons";
+import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 
 export const RESUME_DATA = {
   name: "Bartosz Jarocki",
@@ -38,17 +38,17 @@ export const RESUME_DATA = {
       {
         name: "GitHub",
         url: "https://github.com/BartoszJarocki",
-        icon: GitHubIcon,
+        icon: FiGithub,
       },
       {
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/bjarocki/",
-        icon: LinkedInIcon,
+        icon: FiLinkedin,
       },
       {
         name: "X",
         url: "https://x.com/BartoszJarocki",
-        icon: XIcon,
+        icon: FiTwitter,
       },
     ],
   },
@@ -106,13 +106,17 @@ export const RESUME_DATA = {
     },
   ],
   skills: [
-    "JavaScript",
-    "TypeScript",
-    "React/Next.js/Remix",
-    "Node.js",
-    "GraphQL",
-    "Relay",
-    "WebRTC",
+    {name: "JavaScript",
+      percent: 90},
+    {name: "TypeScript",
+      percent: 40},
+    {name: "React", percent: 90},
+    {name: "Next.js",
+      percent: 10},
+    {name: "Node.js",
+      percent: 90},
+    {name: "GraphQL",
+      percent: 90},
   ],
   projects: [
     {
