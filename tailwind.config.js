@@ -7,7 +7,6 @@ module.exports = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
   ],
-  prefix: "",
   theme: {
     container: {
       center: true,
@@ -51,13 +50,16 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        header: "#1E293B",  // Color para el encabezado
-        textPrimary: "#E2E8F0",  // Color de texto primario
-        textSecondary: "#94A3B8",  // Color de texto secundario
-        link: "#2563EB",  // Color de enlaces
-        badgeBg: "#F3F4F6",  // Fondo de las insignias
-        badgeText: "#1F2937",  // Texto de las insignias
-        socialIcon: "#64748B",  // Color de los íconos sociales
+        header: "#1E293B",
+        textPrimary: "#E2E8F0",
+        textSecondary: "#94A3B8",
+        link: "#2563EB",
+        badgeBg: "#F3F4F6",
+        badgeText: "#1F2937",
+        socialIcon: "#64748B",
+        darkColor: "#272829",
+        lightColor: "#f5f8fd",
+        secondaryColor: "#173b6c",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -73,6 +75,10 @@ module.exports = {
       fontSize: {
         xxs: "0.65rem",
         xxl: "1.75rem",
+      },
+      fontFamily: {
+        sans: ['"Open Sans"', "sans-serif"],
+        heading: ['"Raleway"', "sans-serif"],
       },
       keyframes: {
         "accordion-down": {

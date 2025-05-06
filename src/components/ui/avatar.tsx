@@ -3,19 +3,17 @@
 import * as React from "react";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 
-import { cn } from "@/lib/utils";
+import { cn } from "../../lib/utils";
 
 const Avatar = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>
 >(({ className, ...props }, ref) => (
-  <AvatarPrimitive.Root asChild>
-    <div
-      ref={ref}
-      className={cn(className)}
-      {...props}
-    />
-  </AvatarPrimitive.Root>
+  <AvatarPrimitive.Root
+    ref={ref as React.Ref<HTMLDivElement>}
+    className={cn(className)}
+    {...props}
+  />
 ));
 Avatar.displayName = AvatarPrimitive.Root.displayName;
 

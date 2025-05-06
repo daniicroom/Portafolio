@@ -1,11 +1,9 @@
 "use client";
-
-import { FiAward, FiUser, FiFolder } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { RESUME_DATA } from "@/data/resume-data";
+import { RESUME_DATA } from "../../data/resume-data";
 
 export default function About() {
   useEffect(() => {
@@ -16,12 +14,6 @@ export default function About() {
     });
   }, []);
 
-  const stats = [
-    { value: 10, label: "Years Experience", icon: <FiAward /> },
-    { value: 50, label: "Projects Completed", icon: <FiFolder /> },
-    { value: 100, label: "Happy Clients", icon: <FiUser /> }
-  ];
-
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-6">
@@ -31,12 +23,12 @@ export default function About() {
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6" data-aos="fade-up" data-aos-delay="100"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-            I'm a professional designer with over 10 years of experience creating beautiful digital experiences.
+            {RESUME_DATA.about}
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {stats.map((stat, index) => (
+          {RESUME_DATA.stats.map((stat, index) => (
             <motion.div 
               key={index}
               className="bg-gray-50 p-8 rounded-lg text-center"
@@ -64,7 +56,7 @@ export default function About() {
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2.5">
                   <div 
-                    className="bg-primary h-2.5 rounded-full" 
+                    className="bg-primary h-2.5 rounded-full transition-all duration-500 ease-in-out" 
                     style={{ width: `${skill.percent}%` }}
                   ></div>
                 </div>
@@ -75,11 +67,7 @@ export default function About() {
           <div data-aos="fade-left">
             <h3 className="text-2xl font-bold mb-6">Who I Am</h3>
             <p className="text-gray-600 mb-4">
-              I'm a creative designer based in New York, specializing in web design, graphic design, and branding. 
-              I love turning complex problems into simple, beautiful and intuitive designs.
-            </p>
-            <p className="text-gray-600 mb-4">
-              When I'm not pushing pixels, you'll find me hiking, reading books or working on side projects.
+              {RESUME_DATA.summary}
             </p>
             <button className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors">
               Download CV

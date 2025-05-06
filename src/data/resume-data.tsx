@@ -16,8 +16,8 @@ import {
   ParabolLogo,
   TastyCloudLogo,
   YearProgressLogo,
-} from "@/img/logos";
-import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
+} from "../../public/img/logos";
+import { FiGithub, FiLinkedin, FiTwitter, FiAward, FiUser, FiFolder } from "react-icons/fi";
 
 export const RESUME_DATA = {
   name: "Bartosz Jarocki",
@@ -289,4 +289,9 @@ export const RESUME_DATA = {
       },
     },
   ],
+  stats: [
+    { value: 3, label: "Years Experience", icon: <FiAward /> },
+    { value: 50, label: "Projects Completed", icon: <FiFolder /> },
+    { value: 100, label: "Happy Clients", icon: <FiUser /> }
+  ]
 } as const;
