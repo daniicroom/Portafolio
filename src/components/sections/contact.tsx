@@ -1,7 +1,8 @@
 "use client";
 
+
 import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
-import AOS from 'aos';
+import { RESUME_DATA } from "../../data/resume-data";
 
 export default function Contact() {
   return (
@@ -23,7 +24,7 @@ export default function Contact() {
               <FiMail className="mx-auto" />
             </div>
             <h3 className="text-xl font-bold mb-2">Email</h3>
-            <p className="text-gray-600">contact@example.com</p>
+            <p className="text-gray-600">{RESUME_DATA.contact.email}</p>
           </div>
 
           <div className="bg-gray-50 p-8 rounded-lg text-center">
@@ -31,7 +32,7 @@ export default function Contact() {
               <FiMapPin className="mx-auto" />
             </div>
             <h3 className="text-xl font-bold mb-2">Location</h3>
-            <p className="text-gray-600">New York, USA</p>
+            <p className="text-gray-600">{RESUME_DATA.location}</p>
           </div>
 
           <div className="bg-gray-50 p-8 rounded-lg text-center">
@@ -39,7 +40,7 @@ export default function Contact() {
               <FiPhone className="mx-auto" />
             </div>
             <h3 className="text-xl font-bold mb-2">Phone</h3>
-            <p className="text-gray-600">+1 234 567 890</p>
+            <p className="text-gray-600">{RESUME_DATA.contact.tel}</p>
           </div>
         </div>
 

@@ -1,30 +1,21 @@
 "use client";
 
+import { useEffect } from "react";
 import { FiExternalLink } from "react-icons/fi";
 import { motion } from "framer-motion";
-import AOS from 'aos';
+import Image from "next/image";
+import { RESUME_DATA } from "../../data/resume-data";
 
 export default function Portfolio() {
-  const projects = [
-    {
-      title: "Web Design Project",
-      category: "Web Design",
-      image: "/img/portfolio/portfolio-1.jpg",
-      link: "#"
-    },
-    {
-      title: "App Development",
-      category: "App Development",
-      image: "/img/portfolio/portfolio-2.jpg",
-      link: "#"
-    },
-    {
-      title: "Brand Identity",
-      category: "Branding",
-      image: "/img/portfolio/portfolio-3.jpg",
-      link: "#"
-    }
-  ];
+  useEffect(() => {
+    const initAOS = async () => {
+      const AOS = (await import("aos")).default;
+      AOS.init({ duration: 800, easing: "ease-in-out", once: true });
+    };
+    initAOS();
+  }, []);
+
+  const { projects } = RESUME_DATA;
 
   return (
     <section id="portfolio" className="py-20 bg-gray-50">
@@ -33,8 +24,16 @@ export default function Portfolio() {
           <h2 className="text-4xl font-bold mb-4" data-aos="fade-up">
             My Portfolio
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-6" data-aos="fade-up" data-aos-delay="100"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+          <div
+            className="w-20 h-1 bg-primary mx-auto mb-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          ></div>
+          <p
+            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             Here are some of my recent projects
           </p>
         </div>
@@ -42,28 +41,53 @@ export default function Portfolio() {
         <div className="grid md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
-              key={index}
+              key={project.title + index}
               className="bg-white rounded-lg overflow-hidden shadow-lg"
               whileHover={{ y: -10 }}
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div className="h-48 bg-gray-200 overflow-hidden">
-                <img 
-                  src={project.image} 
+              <div className="h-48 relative">
+                <Image
+                  src={
+                    typeof project.logo === "string"
+                      ? project.logo
+                      : project.logo.src
+                  }
                   alt={project.title}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
+
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.category}</p>
-                <a 
-                  href={project.link} 
-                  className="text-primary hover:text-primary-dark flex items-center"
-                >
-                  View Project <FiExternalLink className="ml-2" />
-                </a>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.techStack?.map((tech) => (
+                    <span
+                      key={tech}
+                      className="bg-gray-200 text-sm text-gray-800 px-2 py-1 rounded"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <p className="text-gray-600 mb-4">{project.description}</p>
+
+                {project.link?.href && (
+                  <a
+                    href={project.link.href}
+                    className="text-primary hover:text-primary-dark flex items-center"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.link.label || "View Project"}{" "}
+                    <FiExternalLink className="ml-2" />
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}

@@ -29,7 +29,7 @@ export const RESUME_DATA = {
     "Full Stack Engineer focused on building products with extra attention to detail",
   summary:
     "As a Full Stack Engineer, I have successfully taken multiple products from 0 to 1. I lead teams effectively, ensuring an environment where people can do their best work. Currently, I work mostly with TypeScript, React, Node.js, and GraphQL. I have over 8 years of experience in working remotely with companies all around the world.",
-  avatarUrl: "https://avatars.githubusercontent.com/u/1017620?v=4",
+  avatarUrl: "/img/profile.jpeg",
   personalWebsiteUrl: "https://jarocki.me",
   contact: {
     email: "bartosz.jarocki@hey.com",
@@ -61,17 +61,6 @@ export const RESUME_DATA = {
     },
   ],
   work: [
-    {
-      company: "Parabol",
-      link: "https://parabol.co",
-      badges: ["Remote"],
-      title: "Senior Full Stack Developer",
-      logo: ParabolLogo,
-      start: "2021",
-      end: "2024",
-      description:
-        "Implemented new features, led squad, worked on improving the way developers ship the code, started migration from Emotion to Tailwind CSS and more. Technologies: React, TypeScript, GraphQL",
-    },
     {
       company: "Clevertech",
       link: "https://clevertech.biz",
@@ -291,7 +280,7 @@ export const RESUME_DATA = {
   ],
   stats: [
     { value: 3, label: "Years Experience", icon: <FiAward /> },
-    { value: 50, label: "Projects Completed", icon: <FiFolder /> },
+    { value: 20, label: "Projects Completed", icon: <FiFolder /> },
     { value: 100, label: "Happy Clients", icon: <FiUser /> }
   ]
 } as const;

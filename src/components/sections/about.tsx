@@ -56,8 +56,8 @@ export default function About() {
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2.5">
                   <div 
-                    className="bg-primary h-2.5 rounded-full transition-all duration-500 ease-in-out" 
-                    style={{ width: `${skill.percent}%` }}
+                    className="h-2.5 rounded-full transition-all duration-500 ease-in-out" 
+                    style={{ width: `${skill.percent}%`, backgroundColor: 'var(--secondary-color)' }}
                   ></div>
                 </div>
               </div>
@@ -69,7 +69,10 @@ export default function About() {
             <p className="text-gray-600 mb-4">
               {RESUME_DATA.summary}
             </p>
-            <button className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors">
+            <button 
+              onClick={() => window.location.href = '/path/to/cv.pdf'} 
+              className="bg-primary text-black px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors"
+            >
               Download CV
             </button>
           </div>
