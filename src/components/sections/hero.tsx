@@ -41,7 +41,7 @@ export default function Hero() {
           {name}
         </h1>
         <p className="text-xl md:text-2xl text-gray-300 mb-8">
-          I'm a <span className="text-primary">{specialty}</span>
+          I am a <span className="text-primary">{specialty}</span>
         </p>
 
         {socialLinks.length > 0 && (

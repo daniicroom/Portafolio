@@ -4,6 +4,7 @@ import Portfolio from "../components/sections/portfolio";
 import Contact from "../components/sections/contact";
 import Experience from "../components/sections/work-experience";
 import Education from "../components/sections/education";
+import Certification from "../components/sections/certifications";
 
 export default function Page() {
   return (
@@ -12,6 +13,7 @@ export default function Page() {
       <About />
       <Experience />
       <Education />
+      <Certification />
       <Portfolio />
       <Contact />
     </main>

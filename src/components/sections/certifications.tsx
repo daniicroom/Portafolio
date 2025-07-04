@@ -11,51 +11,52 @@ import {
   CardContent,
 } from "@/components/ui/card";
 
-export default function Education() {
-  const { education } = RESUME_DATA;
-
+export default function Certifications() {
   useEffect(() => {
     import("aos").then((AOS) =>
       AOS.init({ duration: 800, easing: "ease-in-out", once: true })
     );
   }, []);
 
+  const { certifications } = RESUME_DATA;
+
   return (
-    <section id="education" className="py-20 bg-gray-50">
+    <section id="certifications" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4" data-aos="fade-up">
-            Education
+            Certifications
           </h2>
           <div
             className="w-20 h-1 bg-primary mx-auto mb-6"
             data-aos="fade-up"
             data-aos-delay="100"
-          ></div>
+          />
           <p
             className="text-lg text-gray-600 max-w-2xl mx-auto"
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            Here is an overview of my educational background
+            Some of the certifications I have achieved along my professional path.
           </p>
         </div>
 
-        <div className="space-y-8">
-          {education.map((edu, index) => (
+        <div className="grid gap-8">
+          {certifications.map((cert, index) => (
             <motion.div
-              key={edu.school + index}
-              whileHover={{ y: -10 }}
+              key={cert.name + index}
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.3 }}
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <Card className="shadow-lg">
+              <Card className="shadow-md hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <CardTitle>{edu.school}</CardTitle>
-                  <CardDescription>{edu.degree}</CardDescription>
+                  <CardTitle>{cert.name}</CardTitle>
+                  <CardDescription>{cert.issuer}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  {edu.start} - {edu.end}
+                  {cert.year}
                 </CardContent>
               </Card>
             </motion.div>

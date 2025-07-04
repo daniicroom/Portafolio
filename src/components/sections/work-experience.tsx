@@ -34,7 +34,7 @@ export default function Experience() {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            Here's a summary of my work experience
+            Here is a summary of my work experience
           </p>
         </div>
 
@@ -72,16 +72,18 @@ export default function Experience() {
                 <span className="text-gray-500">{job.start} - {job.end}</span>
               </div>
 
-              <div className="flex flex-wrap gap-2 mb-4">
-                {job.badges.map((badge, index) => (
-                  <span
-                    key={badge + index}
-                    className="bg-gray-200 text-sm text-gray-800 px-3 py-1 rounded-full"
-                  >
-                    {badge}
-                  </span>
-                ))}
-              </div>
+              {!!job.badges?.length && (
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {job.badges.map((badge, i) => (
+                    <span
+                      key={`${badge}-${i}`}
+                      className="bg-gray-200 text-sm text-gray-800 px-3 py-1 rounded-full"
+                    >
+                      {badge}
+                    </span>
+                  ))}
+                </div>
+              )}
 
               <p className="text-gray-600 mb-4">{job.description}</p>
 

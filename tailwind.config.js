@@ -79,6 +79,10 @@ module.exports = {
       fontFamily: {
         sans: ['"Open Sans"', "sans-serif"],
         heading: ['"Raleway"', "sans-serif"],
+        inter: 'var(--font-inter)',
+        openSans: 'var(--font-open-sans)',
+        raleway: 'var(--font-raleway)',
+        poppins: 'var(--font-poppins)',
       },
       keyframes: {
         "accordion-down": {

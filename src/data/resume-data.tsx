@@ -60,6 +60,13 @@ export const RESUME_DATA = {
       end: "2010",
     },
   ],
+  certifications: [
+  {
+    name: "AWS Certified Developer Associate",
+    issuer: "Amazon Web Services",
+    year: 2023
+  }
+],
   work: [
     {
       company: "Clevertech",
@@ -282,5 +289,19 @@ export const RESUME_DATA = {
     { value: 3, label: "Years Experience", icon: <FiAward /> },
     { value: 20, label: "Projects Completed", icon: <FiFolder /> },
     { value: 100, label: "Happy Clients", icon: <FiUser /> }
-  ]
+  ],
+  references: [
+  {
+    name: "Jane Doe",
+    position: "Product Manager at Clevertech",
+    contact: "jane.doe@example.com"
+  }
+],
+awards: [
+  {
+    title: "Best Developer 2020",
+    organization: "Clevertech",
+    description: "Awarded for outstanding leadership and product delivery"
+  }
+]
 } as const;
