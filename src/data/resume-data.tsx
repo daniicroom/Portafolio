@@ -102,17 +102,29 @@ export const RESUME_DATA = {
     },
   ],
   skills: [
-    {name: "JavaScript",
-      percent: 90},
-    {name: "TypeScript",
+    {
+      name: "JavaScript",
+      percent: 90
+    },
+    {
+      name: "TypeScript",
       percent: 40},
-    {name: "React", percent: 90},
-    {name: "Next.js",
-      percent: 10},
-    {name: "Node.js",
-      percent: 90},
-    {name: "GraphQL",
-      percent: 90},
+    {
+      name: "React",
+      percent: 90
+    },
+    {
+      name: "Next.js",
+      percent: 10
+    },
+    {
+      name: "Node.js",
+      percent: 90
+    },
+    {
+      name: "GraphQL",
+      percent: 90
+    },
   ],
   projects: [
     {

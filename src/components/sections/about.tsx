@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import AOS from 'aos';
@@ -30,7 +31,7 @@ export default function About() {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {RESUME_DATA.stats.map((stat, index) => (
             <motion.div 
-              key={index}
+              key={stat.label}
               className="bg-gray-50 p-8 rounded-lg text-center"
               whileHover={{ scale: 1.05 }}
               data-aos="fade-up"
@@ -49,14 +50,13 @@ export default function About() {
           <div data-aos="fade-right">
             <h3 className="text-2xl font-bold mb-6">My Skills</h3>
             {RESUME_DATA.skills.map((skill, index) => (
-              <div key={index} className="mb-6">
+              <div key={skill.name} className="mb-6">
                 <div className="flex justify-between mb-2">
                   <span>{skill.name}</span>
-                  <span>{skill.percent}%</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2.5">
-                  <div 
-                    className="h-2.5 rounded-full transition-all duration-500 ease-in-out" 
+                  <div
+                    className={`h-2.5 rounded-full transition-all duration-500 ease-in-out`}
                     style={{ width: `${skill.percent}%`, backgroundColor: 'var(--secondary-color)' }}
                   ></div>
                 </div>
@@ -69,9 +69,9 @@ export default function About() {
             <p className="text-gray-600 mb-4">
               {RESUME_DATA.summary}
             </p>
-            <button 
-              onClick={() => window.location.href = '/path/to/cv.pdf'} 
-              className="bg-primary text-black px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors"
+            <button
+              onClick={() => import("../../utils/download-pdf").then((m) => m.generatePDF())}
+              className="bg-[var(--primary-color)] text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors"
             >
               Download CV
             </button>
