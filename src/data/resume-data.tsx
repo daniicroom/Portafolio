@@ -313,7 +313,14 @@ awards: [
   {
     title: "Best Developer 2020",
     organization: "Clevertech",
-    description: "Awarded for outstanding leadership and product delivery"
+    description: "Awarded for outstanding leadership and product delivery",
+    year: 2020
+  }
+],
+languages: [
+  {
+    name: "Spanish",
+    level: "Native"
   }
 ]
 } as const;
