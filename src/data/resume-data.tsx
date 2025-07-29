@@ -66,7 +66,7 @@ export const RESUME_DATA = {
     issuer: "Amazon Web Services",
     year: 2023
   }
-],
+  ],
   work: [
     {
       company: "Clevertech",
@@ -101,31 +101,68 @@ export const RESUME_DATA = {
       description: "Creating and testing software for LTE base stations",
     },
   ],
-  skills: [
-    {
-      name: "JavaScript",
-      percent: 90
-    },
-    {
-      name: "TypeScript",
-      percent: 40},
-    {
-      name: "React",
-      percent: 90
-    },
-    {
-      name: "Next.js",
-      percent: 10
-    },
-    {
-      name: "Node.js",
-      percent: 90
-    },
-    {
-      name: "GraphQL",
-      percent: 90
-    },
-  ],
+      skills: [
+        {
+          name: "JavaScript",
+          percent: 90,
+          keywords: 
+          [
+            "GitHub",
+            "Sourcetree",
+            "GitKraken."
+          ]
+        },
+        {
+          name: "TypeScript",
+          percent: 85,
+          keywords: 
+          [
+            "GitHub",
+            "Sourcetree",
+            "GitKraken."
+          ]
+        },
+        {
+          name: "React",
+          percent: 90,
+          keywords: 
+          [
+            "GitHub",
+            "Sourcetree",
+            "GitKraken."
+          ]
+        },
+        {
+          name: "Next.js",
+          percent: 10,
+          keywords: 
+          [
+            "GitHub",
+            "Sourcetree",
+            "GitKraken."
+          ]
+        },
+        {
+          name: "Node.js",
+          percent: 80,
+          keywords: 
+          [
+            "GitHub",
+            "Sourcetree",
+            "GitKraken."
+          ]
+        },
+        {
+          name: "GraphQL",
+          percent: 85,
+          keywords: 
+          [
+            "GitHub",
+            "Sourcetree",
+            "GitKraken."
+          ]
+        },
+      ],
   projects: [
     {
       title: "Consultly",
@@ -308,19 +345,34 @@ export const RESUME_DATA = {
     position: "Product Manager at Clevertech",
     contact: "jane.doe@example.com"
   }
-],
-awards: [
-  {
-    title: "Best Developer 2020",
-    organization: "Clevertech",
-    description: "Awarded for outstanding leadership and product delivery",
-    year: 2020
-  }
-],
-languages: [
-  {
-    name: "Spanish",
-    level: "Native"
-  }
-]
+  ],
+  awards: [
+    {
+      title: "Best Developer 2020",
+      awarder: "Gold",
+      description: "Awarded for outstanding leadership and product delivery",
+      year: 2020
+    }
+  ],
+  languages: [
+    {
+      name: "Spanish",
+      level: "Native",
+      proficiency: 5
+    },
+    {
+      name: "English",
+      level: "Intermediate",
+      proficiency: 3
+    }
+  ],
+  volunteering: [
+    {
+      organization: "Local Coding Bootcamp",
+      role: "Mentor",
+      description: "Guiding aspiring developers in their coding journey",
+      start: "2021",
+      end: "Present"
+    }
+  ]
 } as const;

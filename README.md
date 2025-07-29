@@ -1,25 +1,34 @@
-![cv](https://github.com/BartoszJarocki/cv/assets/1017620/79bdb9fc-0b20-4d2c-aafe-0526ad4a71d2)
+# 📄 Dynamic Portfolio & PDF CV Generator
 
-# Minimalist CV [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FBartoszJarocki%2Fcv)
+Generador de portafolio profesional y currículum dinámico utilizando React, Next.js y @react-pdf/renderer. Convierte un objeto JSON (resume-data.tsx) en una interfaz web moderna y un CV descargable en PDF.
 
-Simple web app that renders minimalist CV with print-friendly layout.
+## ✨ Características
 
-Built with Next.js and shadcn/ui, deployed on Vercel.
+- Diseño responsivo con Tailwind CSS.
+- Sección "Sobre mí", educación, experiencia, habilidades, certificaciones, premios y voluntariado.
+- Visualización en línea del PDF (usando `PDFViewer`).
+- Descarga del CV en un solo clic (`generatePDF()`).
+- Fuente personalizada IBM Plex Serif y Open Sans.
+- Datos completamente dinámicos a partir de JSON (`resume-data.tsx`).
+- Soporte para despliegue en Vercel.
+
+# 🚀 Deploy 
+Despliega instantáneamente tu CV usando Vercel. [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/daniicroom/Portafolio)
+
 
 # Features
 
 - Setup only takes a few minutes [single config file](./src/data/resume-data.tsx)
-- Built using Next.js 14, React, Typescript, Shadcn/ui, TailwindCss
+- Built using Next.js 14, React, Typescript, TailwindCss, @react-pdf/renderer, AOS, Framer Motion
 - Auto generated Layout
 - Responsive for different devices
-- Optimized for Next.js and Vercel
 
 # Getting Started Locally
 
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/BartoszJarocki/cv.git
+   git clone https://github.com/daniicroom/Portafolio.git
    ```
 
 2. Move to the cloned directory
