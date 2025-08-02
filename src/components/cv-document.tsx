@@ -158,7 +158,7 @@ export const CVDocument = () => (
                 {job.link.replace('https://', '')}
               </Link>
             )}
-            <Text>{job.description}</Text>
+            <Text>{job.description.replace(/^-+\s*/gm, '')}</Text>
           </View>
         ))}
 

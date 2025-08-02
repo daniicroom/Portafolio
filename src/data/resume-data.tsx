@@ -1,357 +1,323 @@
 import {
-  AmbitLogo,
-  BarepapersLogo,
-  BimLogo,
-  CDGOLogo,
-  ClevertechLogo,
-  ConsultlyLogo,
-  EvercastLogo,
-  Howdy,
-  JarockiMeLogo,
-  JojoMobileLogo,
-  Minimal,
-  MobileVikingsLogo,
-  MonitoLogo,
-  NSNLogo,
-  ParabolLogo,
-  TastyCloudLogo,
-  YearProgressLogo,
+  TredaLogo,
+  NoLogo,
+  AgRisk,
+  FirmaSeguro,
+  AuraQuantic,
 } from "../../public/img/logos";
-import { FiGithub, FiLinkedin, FiTwitter, FiAward, FiUser, FiFolder } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiAward, FiUser, FiFolder } from "react-icons/fi";
 
 export const RESUME_DATA = {
-  name: "Bartosz Jarocki",
-  initials: "BJ",
-  location: "Wrocław, Poland, CET",
-  locationLink: "https://www.google.com/maps/place/Wrocław",
-  specialty: "Full Stack Engineer",
+  name: "Juan Daniel Valbuena Tapias",
+  initials: "JV",
+  location: "Medellín, Colombia",
+  locationLink: "hhttps://www.google.com/maps/place/Medellín,+Antioquia",
+  specialty: "Middle .NET Software Developer",
   about:
-    "Full Stack Engineer focused on building products with extra attention to detail",
+    "Full Stack Developer focused on building scalable and secure systems",
   summary:
-    "As a Full Stack Engineer, I have successfully taken multiple products from 0 to 1. I lead teams effectively, ensuring an environment where people can do their best work. Currently, I work mostly with TypeScript, React, Node.js, and GraphQL. I have over 8 years of experience in working remotely with companies all around the world.",
+    "Information Systems Engineer with 3+ years of experience in software development and technical leadership. Skilled in modern technologies such as C#, JavaScript, SQL, Docker, AWS, and Azure. Proven success in scaling platforms, leading agile teams, and delivering critical system deployments.",
   avatarUrl: "/img/profile.jpeg",
   personalWebsiteUrl: "https://jarocki.me",
   contact: {
-    email: "bartosz.jarocki@hey.com",
-    tel: "+48530213401",
+    email: "daniicroom@gmail.com",
+    tel: "+573108234666",
     social: [
       {
         name: "GitHub",
-        url: "https://github.com/BartoszJarocki",
+        url: "https://github.com/daniicroom",
         icon: FiGithub,
       },
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/bjarocki/",
+        url: "https://www.linkedin.com/in/daniel-valbuena-295916b1/",
         icon: FiLinkedin,
-      },
-      {
-        name: "X",
-        url: "https://x.com/BartoszJarocki",
-        icon: FiTwitter,
       },
     ],
   },
   education: [
     {
-      school: "Wrocław University of Technology",
-      degree: "Bachelor's Degree in Control systems engineering and Robotics",
-      start: "2007",
-      end: "2010",
+      "school": "Instituto Tecnológico Metropolitano",
+      "degree": "Systems Engineering",
+      "start": "2022",
+      "end": "2024"
+    },
+    {
+      "school": "Instituto Tecnológico Metropolitano",
+      "degree": "Information Systems Technology",
+      "start": "2017",
+      "end": "2022"
     },
   ],
   certifications: [
-  {
-    name: "AWS Certified Developer Associate",
-    issuer: "Amazon Web Services",
-    year: 2023
-  }
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "issuer": "Amazon Web Services Training and Certification",
+      "year": 2024
+    },
+    {
+      "name": "Unit Testing for Automation Consultants",
+      "issuer": "Moodle",
+      "year": 2024
+    },
+    {
+      "name": "Software Development Fundamentals",
+      "issuer": "Microsoft and LinkedIn",
+      "year": 2023
+    },
+    {
+      "name": "AWS Cloud Practitioner Essentials",
+      "issuer": "Nectec",
+      "year": 2022
+    },
+    {
+      "name": "Ethical Hacking | Red Team",
+      "issuer": "Hacker Mentor",
+      "year": 2022
+    },
+    {
+      "name": "SCRUM Web Developer",
+      "issuer": "International Scrum Institute",
+      "year": 2021
+    }
   ],
   work: [
     {
-      company: "Clevertech",
-      link: "https://clevertech.biz",
+      company: "Treda Solutions S.A.S",
+      link: "https://tredasolutions.com/",
       badges: ["Remote"],
-      title: "Lead Android Developer → Full Stack Developer",
-      logo: ClevertechLogo,
-      start: "2015",
+      title: "Lead Product Developer",
+      logo: TredaLogo,
+      start: "2024",
+      end: "Present",
+      description: "As Lead Product Developer, I oversee the full product development lifecycle in alignment with the roadmap, ensuring high-quality and timely feature delivery.\n\n" +
+      "Key Responsibilities:\n" +
+      "- Led and coordinated the technical team to ensure execution and delivery of roadmap objectives.\n" +
+      "- Prioritized tasks and validated their technical and functional feasibility.\n" +
+      "- Collaborated with the commercial team to align business goals with product development.\n" +
+      "- Actively contributed to hands-on development of key features and refactoring legacy code.\n" +
+      "- Planned, executed, and optimized CI/CD deployments across production environments.\n" +
+      "- Automated deployment scripts and handled OS updates on critical infrastructure.\n" +
+      "- Provided technical support to external users during API integration and training.\n\n" +
+      "Key Achievements:\n" +
+      "- Achieved a 95% successful deployment rate with zero critical production issues.\n" +
+      "- Scaled infrastructure to support a 383% increase in transaction volume.\n" +
+      "- Reduced deployment time by 50% through automation and optimization."
+    },
+   {
+      company: "Treda Solutions S.A.S",
+      link: "https://tredasolutions.com/",
+      badges: ["Remote"],
+      title: "I+D+I Developer",
+      logo: TredaLogo,
+      start: "2021",
+      end: "2024",
+      description: "As a developer in the Research, Development, and Innovation (R&D&I) area, my main focus was to plan, develop, and implement projects that drive innovation and lead to the creation of innovative products and the introduction of new functionalities in the market. My role involved a constant commitment to exploring new technologies, methodologies, and approaches to solve problems and seize emerging opportunities.\n\n" +
+      "Projects Participated:\n" +
+      "- Firma Seguro\n" +
+      "- AgRisk\n\n" +
+      "Main Functions:\n" +
+      "- Strategic Planning\n" +
+      "- Research and Analysis\n" +
+      "- Prototyping and Experimentation Development\n" +
+      "- Interdisciplinary Collaboration\n" +
+      "- Development of Innovative Products\n" +
+      "- Continuous Evaluation and Improvement"
+    },    
+    {
+      company: "Importaciones y Soluciones de Ingeniería S.A.S",
+      link: "",
+      badges: [],
+      title: "Trainer",
+      logo: NoLogo,
+      start: "2021",
       end: "2021",
-      description:
-        "Created Android mobile apps and led teams for companies like Vision Media, DKMS, or AAA. Built live streaming application for Evercast from scratch. Technologies: Android, Kotlin, React, TypeScript, GraphQL",
-    },
-    {
-      company: "Jojo Mobile",
-      link: "https://bsgroup.eu/",
-      badges: [],
-      title: "Android Developer → Lead Android Developer",
-      logo: JojoMobileLogo,
-      start: "2012",
-      end: "2015",
-      description:
-        "Built an Android team, created Android apps for biggest Polish companies like LOT, Polskie Radio, Agora, PolskaPress",
-    },
-    {
-      company: "Nokia Siemens Networks",
-      link: "https://www.nokia.com",
-      badges: [],
-      title: "C/C++ Developer",
-      logo: NSNLogo,
-      start: "2010",
-      end: "2012",
-      description: "Creating and testing software for LTE base stations",
+      description: "As a technology trainer, I was responsible for onboarding and upskilling staff in the use of immersive technologies.\n\n" +
+      "Key Responsibilities:\n" +
+      "- Trained personnel in the use and support of Oculus Quest 2 VR devices.\n" +
+      "- Designed and delivered hands-on technical workshops.\n" +
+      "- Provided guidance on VR troubleshooting and best practices for implementation.",
     },
   ],
-      skills: [
-        {
-          name: "JavaScript",
-          percent: 90,
-          keywords: 
-          [
-            "GitHub",
-            "Sourcetree",
-            "GitKraken."
-          ]
-        },
-        {
-          name: "TypeScript",
-          percent: 85,
-          keywords: 
-          [
-            "GitHub",
-            "Sourcetree",
-            "GitKraken."
-          ]
-        },
-        {
-          name: "React",
-          percent: 90,
-          keywords: 
-          [
-            "GitHub",
-            "Sourcetree",
-            "GitKraken."
-          ]
-        },
-        {
-          name: "Next.js",
-          percent: 10,
-          keywords: 
-          [
-            "GitHub",
-            "Sourcetree",
-            "GitKraken."
-          ]
-        },
-        {
-          name: "Node.js",
-          percent: 80,
-          keywords: 
-          [
-            "GitHub",
-            "Sourcetree",
-            "GitKraken."
-          ]
-        },
-        {
-          name: "GraphQL",
-          percent: 85,
-          keywords: 
-          [
-            "GitHub",
-            "Sourcetree",
-            "GitKraken."
-          ]
-        },
-      ],
+  skills: [
+    {
+      name: "C#",
+      percent: 90,
+      keywords: 
+      [
+        "Entity Framework", 
+        "ASP.NET", 
+        "Xunit",
+        "Moq",
+        "Razor"
+      ]
+    },
+    {
+      name: "Cloud",
+      percent: 85,
+      keywords: 
+      [
+        "AWS", 
+        "Azure", 
+        "Lambda", 
+        "SQS", 
+        "Docker",
+        "Meta Services"
+      ]
+    },
+    {
+      name: "JavaScript",
+      percent: 85,
+      keywords: 
+      [
+        "Ajax", 
+        "JQuery", 
+        "HTML", 
+        "CSS"
+      ]
+    },
+    {
+      name: "SQL & NoSQL",
+      percent: 80,
+      keywords: 
+      [
+        "ETL", 
+        "Relational DBs",
+        "MySQL", 
+        "MongoDB",
+        "SQL Server",
+      ]
+    },
+    {
+      name: "API & Integration",
+      percent: 80,
+      keywords: 
+      [
+        "REST", 
+        "SOAP", 
+        "Microservices", 
+        "Jwt",
+        "OAuth"
+      ]
+    },
+    {
+      name: "DevOps Tools",
+      percent: 75,
+      keywords: 
+      [
+        "GitHub", 
+        "GitKraken", 
+        "Sourcetree", 
+        "Postman", 
+        "Rocketbot",
+      ]
+    },
+  ],
   projects: [
     {
-      title: "Consultly",
+      title: "FirmaSeguro",
       techStack: [
-        "Side Project",
-        "TypeScript",
-        "Next.js",
-        "Vite",
-        "GraphQL",
-        "WebRTC",
+        "Enterprise SaaS",
+        ".Net Core",
+        "JavaScript",
+        "Andes SCD",
+        "Twilio",
+        "AWS",
+        "CI/CD",
+        "Api Rest",
+        "ElasticBean stalk",
+        "Docker",
       ],
-      description: "A platform to build and grow your online business",
-      logo: ConsultlyLogo,
+      description: "An advanced electronic signature platform that simplifies and secures your digital processes. With fully customizable workflows, it guarantees the authenticity, integrity, and legal validity of your documents, complying with international regulations. Ideal for accelerating operations, reducing costs, and eliminating paper, without sacrificing security or compliance.",
+      logo: FirmaSeguro,
       link: {
-        label: "consultly.com",
-        href: "https://consultly.com/",
+        label: "firmaseguro.co",
+        href: "https://firmaseguro.co/",
       },
     },
     {
-      title: "Monito",
-      techStack: ["Side Project", "TypeScript", "Next.js", "Browser Extension"],
-      description:
-        "Browser extension that records everything happening in a web application",
-      logo: MonitoLogo,
-      link: {
-        label: "monito.dev",
-        href: "https://monito.dev/",
-      },
-    },
-    {
-      title: "Jarocki.me",
-      techStack: ["Side Project", "Next.js", "MDX"],
-      description:
-        "My personal website and blog. Built with Next.js and Notion API",
-      logo: JarockiMeLogo,
-      link: {
-        label: "github.com",
-        href: "https://jarocki.me/",
-      },
-    },
-    {
-      title: "Minimal",
-      techStack: ["Side Project", "Next.js", "Puppeteer"],
-      description:
-        "Minimalist calendars, habit trackers and planners generator",
-      logo: Minimal,
-      link: {
-        label: "useminimal.com",
-        href: "https://useminimal.com/",
-      },
-    },
-    {
-      title: "Barepapers",
-      techStack: ["Side Project", "Next.js", "Puppeteer"],
-      description:
-        "Generates beautiful wallpapers using random shapes and gradients",
-      logo: BarepapersLogo,
-      link: {
-        label: "barepapers.com",
-        href: "https://barepapers.com/",
-      },
-    },
-    {
-      title: "Year progress",
-      techStack: ["Side Project", "TypeScript", "Next.js"],
-      description: "Tracks current year progress and displays a countdown",
-      logo: YearProgressLogo,
-      link: {
-        label: "getyearprogress.com",
-        href: "https://getyearprogress.com/",
-      },
-    },
-    {
-      title: "Parabol",
+      title: "AgRisk",
       techStack: [
-        "Full Stack Developer",
-        "TypeScript",
-        "React",
-        "Node.js",
-        "GraphQL",
+        ".Net Core",
+        "Azure",
+        "Microsoft Graph",
+        "JavaScript",
+        "Mysql"
       ],
-      description:
-        "The Agile meeting co-pilot that delivers better meetings with less effort",
-      logo: ParabolLogo,
+      description: "Specialized system for agro-industrial risk management, farm evaluation, and intelligent reporting for insurers and producers.",
+      logo: AgRisk,
       link: {
-        label: "github.com",
-        href: "https://parabol.co/",
+        label: "agrisk.com.co",
+        href: "https://agrisk.com.co/",
       },
     },
     {
-      title: "Evercast",
+      title: "AuraQuantic Integrations",
       techStack: [
-        "Lead Frontend Developer",
-        "TypeScript",
-        "React",
-        "Node.js",
-        "GraphQL",
+        "Enterprise Integration",
+        "AuraQuantic",
+        "C#",
+        ".NET Core",
+        "REST APIs",
+        "SOAP",
+        "SQL Server",
+        "IIS"
       ],
-      description:
-        "Creative collaboration platform that combines video conferencing and HD media streaming",
-      logo: EvercastLogo,
+      description: "Development and implementation of custom integrations for business process automation for AuraQuantic clients, using C# and .NET Core to connect systems and optimize workflows.",
+      logo: AuraQuantic,
       link: {
-        label: "evercast.us",
-        href: "https://www.evercast.us/",
+        label: "auraquantic.com",
+        href: "https://www.auraquantic.com/es/",
       },
-    },
-    {
-      title: "Mobile Vikings",
-      techStack: ["Lead Android Developer", "Android", "Kotlin"],
-      description:
-        "Android application for leading virtual mobile operator in Poland",
-      logo: MobileVikingsLogo,
-      link: {
-        label: "mobilevikings.pl",
-        href: "https://mobilevikings.pl/",
-      },
-    },
-    {
-      title: "Howdy",
-      techStack: ["Lead Android Developer", "Android", "Kotlin"],
-      description:
-        "Howdy is a place for you to join communities you care about",
-      logo: Howdy,
-      link: {
-        label: "play.google.com",
-        href: "https://howdy.co/",
-      },
-    },
-    {
-      title: "Tastycloud",
-      techStack: ["Lead Android Developer", "Android", "Kotlin"],
-      description:
-        "Android application for managing and displaying restaurant menus in kiosk mode",
-      logo: TastyCloudLogo,
-      link: {
-        label: "tastycloud.fr",
-        href: "https://www.tastycloud.fr/",
-      },
-    },
-    {
-      title: "Ambit",
-      techStack: ["Lead Android Developer", "Android", "Kotlin"],
-      description: "Android application that helps with sharing your contact details",
-      logo: AmbitLogo,
-      link: {
-        label: "",
-        href: "#",
-      },
-    },
-    {
-      title: "Bim",
-      techStack: ["Lead Android Developer", "Android", "Kotlin"],
-      description: "Android application that helps with booking a table in a restaurants",
-      logo: BimLogo,
-      link: {
-        label: "",
-        href: "#",
-      },
-    },
-    {
-      title: "Canal Digital GO",
-      techStack: ["Lead Android Developer", "Android", "Kotlin"],
-      description:
-        "Video streaming mobile application for Canal Digital subscribers",
-      logo: CDGOLogo,
-      link: {
-        label: "",
-        href: "#",
-      },
-    },
+    }
   ],
   stats: [
-    { value: 3, label: "Years Experience", icon: <FiAward /> },
-    { value: 20, label: "Projects Completed", icon: <FiFolder /> },
-    { value: 100, label: "Happy Clients", icon: <FiUser /> }
+    { 
+      value: 3, 
+      label: "Years Experience", 
+      icon: <FiAward /> 
+    },
+    { 
+      value: 10, 
+      label: "Projects Completed", 
+      icon: <FiFolder /> 
+    },
+    { 
+      value: 2, 
+      label: "Products Developed", 
+      icon: <FiUser /> 
+    }
   ],
   references: [
-  {
-    name: "Jane Doe",
-    position: "Product Manager at Clevertech",
-    contact: "jane.doe@example.com"
-  }
+    {
+      name: "Erika Romero",
+      position: "Systems Engineer",
+      contact: ""
+    },
+    {
+      name: "Cristhian Sandoval",
+      position: "Systems Engineer",
+      contact: ""
+    }
   ],
   awards: [
     {
-      title: "Best Developer 2020",
-      awarder: "Gold",
-      description: "Awarded for outstanding leadership and product delivery",
-      year: 2020
+      title: "Recognition for Excellence",
+      awarder: "Treda Solutions S.A.S.",
+      description: "For consolidating the architecture of the Firma Seguro product and its white brands, achieving the milestone of 100,000 digital signatures.",
+      year: 2025
+    },
+    {
+      title: "Gold Recognition for Excellence",
+      awarder: "Treda Solutions S.A.S.",
+      description: "for his excellent performance in leading the product development team, achieving rapid deliveries in the construction of new features prioritized in the roadmap.",
+      year: 2024
+    },
+    {
+      title: "Gold Recognition for Excellence",
+      awarder: "Treda Solutions S.A.S.",
+      description: "Awarded for outstanding performance and development of the microservice for certified digital signature and WhatsApp-based authentication.",
+      year: 2022
     }
   ],
   languages: [
@@ -368,11 +334,11 @@ export const RESUME_DATA = {
   ],
   volunteering: [
     {
-      organization: "Local Coding Bootcamp",
-      role: "Mentor",
-      description: "Guiding aspiring developers in their coding journey",
-      start: "2021",
-      end: "Present"
+      organization: "Fundación Huellas",
+      role: "Volunteer Teacher",
+      description: "Guided children and youth academically and recreationally in underserved communities of Bello, and supported the foundation’s database and IT systems.",
+      start: "2017",
+      end: "2023"
     }
   ]
 } as const;

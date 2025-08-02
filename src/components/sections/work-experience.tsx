@@ -85,7 +85,34 @@ export default function Experience() {
                 </div>
               )}
 
-              <p className="text-gray-600 mb-4">{job.description}</p>
+              <div className="text-gray-600 mb-4 space-y-4">
+                {job.description.split("\n\n").map((block, i) => {
+                  const [heading, ...rest] = block.split(":\n");
+                  const content = rest.join("\n");
+
+                  const isListSection = rest.length > 0 && content.trim().startsWith("-");
+
+                  return (
+                    <div key={i}>
+                      {isListSection ? (
+                        <>
+                          <h4 className="font-semibold text-gray-700 mb-1">{heading}:</h4>
+                          <ul className="list-disc list-inside space-y-1">
+                            {content
+                              .split("\n")
+                              .filter(line => line.trim().startsWith("-"))
+                              .map((line, j) => (
+                                <li key={j}>{line.replace(/^- /, "").trim()}</li>
+                              ))}
+                          </ul>
+                        </>
+                      ) : (
+                        <p>{block.trim()}</p>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
 
               {job.link && (
                 <a
