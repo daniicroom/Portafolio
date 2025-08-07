@@ -18,7 +18,7 @@ export const RESUME_DATA = {
   summary:
     "Information Systems Engineer with 3+ years of experience in software development and technical leadership. Skilled in modern technologies such as C#, JavaScript, SQL, Docker, AWS, and Azure. Proven success in scaling platforms, leading agile teams, and delivering critical system deployments.",
   avatarUrl: "/img/profile.jpeg",
-  personalWebsiteUrl: "https://jarocki.me",
+  personalWebsiteUrl: "https://portafolio-mfbf.vercel.app/",
   contact: {
     email: "daniicroom@gmail.com",
     tel: "+573108234666",
