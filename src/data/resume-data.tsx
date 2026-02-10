@@ -273,7 +273,7 @@ export const RESUME_DATA = {
   ],
   stats: [
     { 
-      value: 3, 
+      value: 4, 
       label: "Years Experience", 
       icon: <FiAward /> 
     },
