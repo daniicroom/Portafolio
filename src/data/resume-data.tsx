@@ -12,7 +12,7 @@ export const RESUME_DATA = {
   initials: "JV",
   location: "Medellín, Colombia",
   locationLink: "hhttps://www.google.com/maps/place/Medellín,+Antioquia",
-  specialty: "Middle .NET Software Developer",
+  specialty: "Senior .NET Software Developer",
   about:
     "Full Stack Developer focused on building scalable and secure systems",
   summary:
