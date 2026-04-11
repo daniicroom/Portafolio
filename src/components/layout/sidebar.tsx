@@ -5,7 +5,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { NAV_LINKS } from "@/data/navigation-links";
-import { RESUME_DATA } from "../../data/resume-data";
+import { getResumeData } from "@/data";
+import { LanguageSwitcher } from "../LanguageSwitcher";
+import { useLanguage } from "../providers/LanguageProvider";
 import { FiHome, FiUser, FiGrid, FiMail, FiMenu, FiX } from "react-icons/fi";
 import { PiStudent, PiCertificate } from "react-icons/pi";
 import { MdWork } from "react-icons/md";
@@ -23,8 +25,12 @@ const ICON_MAP: Record<string, React.ElementType> = {
 export default function Sidebar() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { locale } = useLanguage();
+  const RESUME_DATA = getResumeData(locale);
 
   useEffect(() => {
+    setMounted(true);
     import("aos").then((AOS) =>
       AOS.init({
         duration: 1000,
@@ -34,6 +40,16 @@ export default function Sidebar() {
       })
     );
   }, []);
+
+  if (!mounted) {
+    return (
+      <>
+        {/* Desktop Sidebar Placeholder */}
+        <aside className="hidden md:block fixed top-0 left-0 h-full w-64 lg:w-72 bg-[#040b14] text-white z-30" />
+        <div className="md:ml-64 lg:ml-72" />
+      </>
+    );
+  }
 
   const renderNavItems = () =>
     NAV_LINKS.map((item) => {
@@ -94,6 +110,10 @@ export default function Sidebar() {
                     })}
                 </a>
               ))}
+            </div>
+
+            <div className="mt-6">
+              <LanguageSwitcher />
             </div>
           </div>
 

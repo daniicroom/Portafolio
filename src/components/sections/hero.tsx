@@ -1,12 +1,20 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { FiChevronDown } from "react-icons/fi";
-import { RESUME_DATA } from "../../data/resume-data";
+import { getResumeData } from "@/data";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export default function Hero() {
+  const t = useTranslations();
+  const { locale } = useLanguage();
+  const RESUME_DATA = getResumeData(locale);
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
+    setMounted(true);
     const initAOS = async () => {
       const AOS = (await import("aos")).default;
       AOS.init({ duration: 800, easing: "ease-in-out", once: true });
@@ -17,6 +25,8 @@ export default function Hero() {
 
   const { avatarUrl, name, specialty, contact } = RESUME_DATA;
   const socialLinks = contact?.social ?? [];
+
+  if (!mounted) return null;
 
   return (
     <section
@@ -41,7 +51,7 @@ export default function Hero() {
           {name}
         </h1>
         <p className="text-xl md:text-2xl text-gray-300 mb-8">
-          I am a <span className="text-primary">{specialty}</span>
+          {t('sections.hero.iAm')} <span className="text-primary">{specialty}</span>
         </p>
 
         {socialLinks.length > 0 && (
@@ -67,7 +77,7 @@ export default function Hero() {
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          <span className="mr-2">Scroll Down</span>
+          <span className="mr-2">{t('sections.hero.scrollDown')}</span>
           <FiChevronDown className="animate-bounce" />
         </a>
       </div>

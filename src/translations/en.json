@@ -1,0 +1,82 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "education": "Education",
+    "certification": "Certification",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "layout": {
+    "toggleMenu": "Toggle menu",
+    "downloadCv": "Download CV"
+  },
+  "sections": {
+    "hero": {
+      "scrollDown": "Scroll Down",
+      "iAm": "I am a",
+      "specialty": "Specialty"
+    },
+    "about": {
+      "title": "About Me",
+      "subtitle": "Who I Am",
+      "description": "About me description",
+      "technicalSkills": "Technical Skills",
+      "seeCv": "See CV",
+      "downloadCv": "Download CV"
+    },
+    "workExperience": {
+      "title": "Work Experience",
+      "subtitle": "Here is a summary of my work experience",
+      "stillWorking": "Still working"
+    },
+    "portfolio": {
+      "title": "My Portfolio",
+      "subtitle": "Here are some of my recent projects"
+    },
+    "education": {
+      "title": "Education",
+      "subtitle": "My educational background"
+    },
+    "certifications": {
+      "title": "Certifications",
+      "subtitle": "Professional certifications and credentials"
+    },
+    "contact": {
+      "title": "Contact Me",
+      "subtitle": "Feel free to reach out for collaborations or just a friendly hello",
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Failed to send message. Please try again."
+    }
+  },
+  "cv": {
+    "contact": "Contact",
+    "contactInfo": "Contact Information",
+    "summary": "Professional Summary",
+    "technicalSkills": "Technical Skills",
+    "workExperience": "Work Experience",
+    "education": "Education",
+    "certifications": "Certifications",
+    "projects": "Projects",
+    "languages": "Languages",
+    "volunteering": "Volunteering",
+    "awards": "Awards",
+    "references": "References"
+  },
+  "common": {
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "website": "Website",
+    "currentlyWorking": "Currently working here",
+    "viewProject": "View Project",
+    "technicalStack": "Technical Stack"
+  }
+}

@@ -7,12 +7,12 @@ import {
 } from "../../public/img/logos";
 import { FiGithub, FiLinkedin, FiAward, FiUser, FiFolder } from "react-icons/fi";
 
-export const RESUME_DATA = {
+export const RESUME_DATA_ES = {
   name: "Juan Daniel Valbuena Tapias",
   initials: "JV",
   location: "Medellín, Colombia",
   locationLink: "https://www.google.com/maps/place/Medellín,+Antioquia",
-  specialty: "Desarrollador de Software .NET Nivel Medio",
+  specialty: "Desarrollador de Software .NET",
   about:
     "Desarrollador Full Stack enfocado en construir sistemas seguros y escalables",
   summary:

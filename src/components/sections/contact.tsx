@@ -1,10 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
-import { RESUME_DATA } from "../../data/resume-data";
+import { getResumeData } from "@/data";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export default function Contact() {
+  const t = useTranslations();
+  const { locale } = useLanguage();
+  const RESUME_DATA = getResumeData(locale);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,7 +31,7 @@ export default function Contact() {
     // Aquí puedes hacer fetch/axios a una API de contacto
     console.log("Form data submitted:", formData);
     setIsLoading(false);
-    alert("Message sent (fake)!");
+    alert(t('sections.contact.success'));
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
@@ -34,11 +40,11 @@ export default function Contact() {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4" data-aos="fade-up">
-            Contact Me
+            {t('sections.contact.title')}
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6" data-aos="fade-up" data-aos-delay="100"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-            Feel free to reach out for collaborations or just a friendly hello.
+            {t('sections.contact.subtitle')}
           </p>
         </div>
 
@@ -47,7 +53,7 @@ export default function Contact() {
             <div className="text-4xl text-primary mb-4">
               <FiMail className="mx-auto" />
             </div>
-            <h3 className="text-xl font-bold mb-2">Email</h3>
+            <h3 className="text-xl font-bold mb-2">{t('common.email')}</h3>
             <p className="text-gray-600">{RESUME_DATA.contact?.email ?? "email@example.com"}</p>
           </div>
 
@@ -55,7 +61,7 @@ export default function Contact() {
             <div className="text-4xl text-primary mb-4">
               <FiMapPin className="mx-auto" />
             </div>
-            <h3 className="text-xl font-bold mb-2">Location</h3>
+            <h3 className="text-xl font-bold mb-2">{t('common.location')}</h3>
             <p className="text-gray-600">{RESUME_DATA.location ?? "Unknown Location"}</p>
           </div>
 

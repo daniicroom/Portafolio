@@ -1,19 +1,29 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { FiExternalLink } from "react-icons/fi";
-import { RESUME_DATA } from "../../data/resume-data";
+import { getResumeData } from "@/data";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export default function Experience() {
+  const t = useTranslations();
+  const { locale } = useLanguage();
+  const RESUME_DATA = getResumeData(locale);
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
+    setMounted(true);
     const initAOS = async () => {
       const AOS = (await import("aos")).default;
       AOS.init({ duration: 800, easing: "ease-in-out", once: true });
     };
     initAOS();
   }, []);
+
+  if (!mounted) return null;
 
   const { work } = RESUME_DATA;
 
@@ -22,7 +32,7 @@ export default function Experience() {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4" data-aos="fade-up">
-            Work Experience
+            {t('sections.workExperience.title')}
           </h2>
           <div
             className="w-20 h-1 bg-primary mx-auto mb-6"
@@ -34,7 +44,7 @@ export default function Experience() {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            Here is a summary of my work experience
+            {t('sections.workExperience.subtitle')}
           </p>
         </div>
 

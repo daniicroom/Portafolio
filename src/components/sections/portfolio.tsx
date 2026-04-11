@@ -1,19 +1,29 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { FiExternalLink } from "react-icons/fi";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { RESUME_DATA } from "../../data/resume-data";
+import { getResumeData } from "@/data";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export default function Portfolio() {
+  const t = useTranslations();
+  const { locale } = useLanguage();
+  const RESUME_DATA = getResumeData(locale);
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
+    setMounted(true);
     const initAOS = async () => {
       const AOS = (await import("aos")).default;
       AOS.init({ duration: 800, easing: "ease-in-out", once: true });
     };
     initAOS();
   }, []);
+
+  if (!mounted) return null;
 
   const { projects } = RESUME_DATA;
 
@@ -22,7 +32,7 @@ export default function Portfolio() {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4" data-aos="fade-up">
-            My Portfolio
+            {t('sections.portfolio.title')}
           </h2>
           <div
             className="w-20 h-1 bg-primary mx-auto mb-6"
@@ -34,7 +44,7 @@ export default function Portfolio() {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            Here are some of my recent projects
+            {t('sections.portfolio.subtitle')}
           </p>
         </div>
 

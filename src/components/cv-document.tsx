@@ -7,7 +7,7 @@ import {
   Font,
   Link
 } from "@react-pdf/renderer";
-import { RESUME_DATA } from "../data/resume-data";
+import { getResumeData, type Locale } from "../data";
 
 Font.register({
   family: 'IBM Plex Serif',
@@ -128,7 +128,20 @@ const styles = StyleSheet.create({
   }
 });
 
-export const CVDocument = () => (
+export const CVDocument = ({ locale = "en" }: { locale?: Locale }) => {
+  const RESUME_DATA = getResumeData(locale);
+  const translations = {
+    summary: locale === "es" ? "Resumen" : "Summary",
+    experience: locale === "es" ? "Experiencia" : "Experience",
+    education: locale === "es" ? "Educación" : "Education",
+    volunteering: locale === "es" ? "Voluntariado" : "Volunteering",
+    technicalSkills: locale === "es" ? "Habilidades Técnicas" : "Technical Skills",
+    certifications: locale === "es" ? "Certificaciones" : "Certifications",
+    awards: locale === "es" ? "Premios" : "Awards",
+    languages: locale === "es" ? "Idiomas" : "Languages",
+  };
+
+  return (
   <Document title={`Resume - ${RESUME_DATA.name}`}>
     <Page size="A4" style={styles.page}>
       <View style={styles.container}>
@@ -142,10 +155,10 @@ export const CVDocument = () => (
           </View>
         </View>
 
-        <Text style={styles.sectionTitle}>Summary</Text>
+        <Text style={styles.sectionTitle}>{translations.summary}</Text>
         <Text>{RESUME_DATA.summary}</Text>
 
-        <Text style={styles.sectionTitle}>Experience</Text>
+        <Text style={styles.sectionTitle}>{translations.experience}</Text>
         {RESUME_DATA.work.map((job, index) => (
           <View key={index} style={{ marginBottom: 12 }}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
@@ -162,7 +175,7 @@ export const CVDocument = () => (
           </View>
         ))}
 
-        <Text style={styles.sectionTitle}>Education</Text>
+        <Text style={styles.sectionTitle}>{translations.education}</Text>
         {RESUME_DATA.education.map((edu, index) => (
           <View key={index} style={styles.educationRow}>
             <View style={{ width: '70%' }}>
@@ -175,7 +188,7 @@ export const CVDocument = () => (
           </View>
         ))}
 
-        <Text style={styles.sectionTitle}>Volunteering</Text>
+        <Text style={styles.sectionTitle}>{translations.volunteering}</Text>
         {RESUME_DATA.volunteering.map((vol, index) => (
           <View key={index} style={{ marginBottom: 12 }}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
@@ -188,7 +201,7 @@ export const CVDocument = () => (
         ))}
 
         {/* Skills Section - Organized by Category */}
-        <Text style={styles.sectionTitle}>Technical Skills</Text>
+        <Text style={styles.sectionTitle}>{translations.technicalSkills}</Text>
         <View style={styles.skillsContainer}>
               {RESUME_DATA.skills.map((skill, skillIndex) => (
                 <View key={skillIndex} style={styles.skillItem}>
@@ -203,7 +216,7 @@ export const CVDocument = () => (
               ))}
         </View>
 
-        <Text style={styles.sectionTitle}>Certifications</Text>
+        <Text style={styles.sectionTitle}>{translations.certifications}</Text>
         {RESUME_DATA.certifications.map((cert, index) => (
           <View key={index} style={styles.certification}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
@@ -214,7 +227,7 @@ export const CVDocument = () => (
           </View>
         ))}
 
-        <Text style={styles.sectionTitle}>Awards</Text>
+        <Text style={styles.sectionTitle}>{translations.awards}</Text>
         {RESUME_DATA.awards.map((award, index) => (
           <View key={index} style={{ marginBottom: 12 }}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
@@ -227,7 +240,7 @@ export const CVDocument = () => (
         ))}
 
          {/* Languages */}
-        <Text style={styles.sectionTitle}>Languages</Text>
+        <Text style={styles.sectionTitle}>{translations.languages}</Text>
         {RESUME_DATA.languages.map((lang, index) => (
           <View key={index} style={{ marginBottom: 6 }}>
             <Text style={styles.boldText}>{lang.name}</Text>
@@ -237,7 +250,8 @@ export const CVDocument = () => (
       </View>
     </Page>
   </Document>
-);
+  );
+};
 
 export const getSkillLevel = (percent: number) => {
   if (percent >= 90) return 'Expert';

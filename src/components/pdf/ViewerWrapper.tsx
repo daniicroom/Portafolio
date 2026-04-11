@@ -3,11 +3,14 @@
 import React from "react";
 import { CVDocument } from "../cv-document";
 import { pdf } from "@react-pdf/renderer";
+import { type Locale } from "@/data";
 
 export const viewPDFInNewTab = async () => {
   try {
+    // Get locale from localStorage or default to "en"
+    const savedLocale = localStorage.getItem("locale") as Locale || "en";
 
-    const blob = await pdf(<CVDocument />).toBlob();
+    const blob = await pdf(<CVDocument locale={savedLocale} />).toBlob();
     const url = URL.createObjectURL(blob);
 
     // Abrir en una nueva pestaña

@@ -7,6 +7,10 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/layout/sidebar";
+import { LanguageProvider } from "@/components/providers/LanguageProvider";
+import { IntlProvider } from "@/components/providers/IntlProvider";
+
+export const dynamic = "force-dynamic";
 
 // Configurar todas las fuentes
 const inter = Inter({ 
@@ -39,11 +43,18 @@ export const metadata: Metadata = {
   description: "Modern portfolio based on iPortfolio design",
 };
 
-export default function RootLayout({
+async function getInitialMessages() {
+  const messages = await import('../translations/en.json');
+  return messages.default;
+}
+
+export default async function RootLayout({
   children,
 }: {
   readonly children: React.ReactNode;
 }) {
+  const initialMessages = await getInitialMessages();
+
   return (
     <html lang="en" className={`
       ${inter.variable}
@@ -52,12 +63,16 @@ export default function RootLayout({
       ${poppins.variable}
     `}>
       <body className="bg-gray-100">
-        <div className="flex min-h-screen">
-          <Sidebar />
-          <main className="flex-1 p-4 md:p-8 relative">
-            {children}
-          </main>
-        </div>
+        <IntlProvider locale="en" messages={initialMessages}>
+          <LanguageProvider initialLocale="en">
+            <div className="flex min-h-screen">
+              <Sidebar />
+              <main className="flex-1 p-4 md:p-8 relative">
+                {children}
+              </main>
+            </div>
+          </LanguageProvider>
+        </IntlProvider>
       </body>
     </html>
   );

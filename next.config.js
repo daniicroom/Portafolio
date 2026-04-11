@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const createNextIntlPlugin = require('next-intl/plugin');
 
-module.exports = nextConfig
+const withNextIntl = createNextIntlPlugin();
+
+const nextConfig = {
+  reactStrictMode: true,
+};
+
+module.exports = withNextIntl(nextConfig);

@@ -1,8 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { RESUME_DATA } from "../../data/resume-data";
+import { useTranslations } from "next-intl";
+import { getResumeData } from "@/data";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 import {
   Card,
   CardHeader,
@@ -12,20 +14,28 @@ import {
 } from "@/components/ui/card";
 
 export default function Education() {
+  const t = useTranslations();
+  const { locale } = useLanguage();
+  const RESUME_DATA = getResumeData(locale);
+  const [mounted, setMounted] = useState(false);
+
   const { education } = RESUME_DATA;
 
   useEffect(() => {
+    setMounted(true);
     import("aos").then((AOS) =>
       AOS.init({ duration: 800, easing: "ease-in-out", once: true })
     );
   }, []);
+
+  if (!mounted) return null;
 
   return (
     <section id="education" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4" data-aos="fade-up">
-            Education
+            {t('sections.education.title')}
           </h2>
           <div
             className="w-20 h-1 bg-primary mx-auto mb-6"
@@ -37,7 +47,7 @@ export default function Education() {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            Here is an overview of my educational background
+            {t('sections.education.subtitle')}
           </p>
         </div>
 

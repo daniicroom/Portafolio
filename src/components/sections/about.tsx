@@ -1,22 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { RESUME_DATA } from "../../data/resume-data";
+import { getResumeData } from "@/data";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export default function About() {
+  const t = useTranslations();
+  const { locale } = useLanguage();
+  const RESUME_DATA = getResumeData(locale);
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
+    setMounted(true);
     AOS.init({ duration: 800, easing: "ease-in-out", once: true });
   }, []);
+
+  if (!mounted) return null;
 
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4" data-aos="fade-up">
-            About Me
+            {t('sections.about.title')}
           </h2>
           <p
             className="text-lg text-gray-600 max-w-2xl mx-auto"
@@ -44,7 +54,7 @@ export default function About() {
         </div>
 
         <div data-aos="fade-up" className="grid gap-8 mb-16">
-          <h3 className="text-2xl font-bold mb-6 text-center text-gray-800">Who I Am</h3>
+          <h3 className="text-2xl font-bold mb-6 text-center text-gray-800">{t('sections.about.subtitle')}</h3>
           <p className="text-gray-600 mb-6">{RESUME_DATA.summary}</p>
           
           <div className="flex flex-wrap gap-4">
@@ -52,19 +62,19 @@ export default function About() {
               onClick={() => import("../pdf/ViewerWrapper").then((m) => m.viewPDFInNewTab())}
               className="bg-[var(--primary-color)] text-white px-6 py-3 rounded-lg transition-colors hover:bg-[var(--secondary-color)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-color)]"
             >
-              See CV
+              {t('sections.about.seeCv')}
             </button>
             <button
               onClick={() => import("../pdf/download-pdf").then((m) => m.generatePDF())}
               className="bg-[var(--primary-color)] text-white px-6 py-3 rounded-lg transition-colors hover:bg-[var(--secondary-color)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-color)]"
             >
-              Download CV
+              {t('sections.about.downloadCv')}
             </button>
           </div>
         </div>
 
         <div data-aos="fade-up">
-          <h3 className="text-2xl font-bold mb-6 text-center text-gray-800">Technical Skills</h3>
+          <h3 className="text-2xl font-bold mb-6 text-center text-gray-800">{t('sections.about.technicalSkills')}</h3>
           
           <div className="space-y-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

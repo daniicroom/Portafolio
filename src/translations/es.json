@@ -1,0 +1,82 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "experience": "Experiencia",
+    "education": "Educación",
+    "certification": "Certificaciones",
+    "portfolio": "Portafolio",
+    "contact": "Contacto"
+  },
+  "layout": {
+    "toggleMenu": "Alternar menú",
+    "downloadCv": "Descargar CV"
+  },
+  "sections": {
+    "hero": {
+      "scrollDown": "Desplazarse hacia abajo",
+      "iAm": "Soy un",
+      "specialty": "Especialidad"
+    },
+    "about": {
+      "title": "Acerca de mí",
+      "subtitle": "Quién soy",
+      "description": "Descripción sobre mí",
+      "technicalSkills": "Habilidades Técnicas",
+      "seeCv": "Ver CV",
+      "downloadCv": "Descargar CV"
+    },
+    "workExperience": {
+      "title": "Experiencia Laboral",
+      "subtitle": "Aquí hay un resumen de mi experiencia laboral",
+      "stillWorking": "Aún trabajando"
+    },
+    "portfolio": {
+      "title": "Mi Portafolio",
+      "subtitle": "Aquí están algunos de mis proyectos recientes"
+    },
+    "education": {
+      "title": "Educación",
+      "subtitle": "Mi historial educativo"
+    },
+    "certifications": {
+      "title": "Certificaciones",
+      "subtitle": "Certificaciones y credenciales profesionales"
+    },
+    "contact": {
+      "title": "Contacta conmigo",
+      "subtitle": "No dudes en comunicarte para colaboraciones o simplemente saludar",
+      "name": "Nombre",
+      "email": "Correo Electrónico",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "¡Mensaje enviado exitosamente!",
+      "error": "Error al enviar el mensaje. Por favor intenta nuevamente."
+    }
+  },
+  "cv": {
+    "contact": "Contacto",
+    "contactInfo": "Información de Contacto",
+    "summary": "Resumen Profesional",
+    "technicalSkills": "Habilidades Técnicas",
+    "workExperience": "Experiencia Laboral",
+    "education": "Educación",
+    "certifications": "Certificaciones",
+    "projects": "Proyectos",
+    "languages": "Idiomas",
+    "volunteering": "Voluntariado",
+    "awards": "Premios",
+    "references": "Referencias"
+  },
+  "common": {
+    "email": "Correo Electrónico",
+    "phone": "Teléfono",
+    "location": "Ubicación",
+    "website": "Sitio Web",
+    "currentlyWorking": "Trabajando actualmente",
+    "viewProject": "Ver Proyecto",
+    "technicalStack": "Stack Tecnológico"
+  }
+}
