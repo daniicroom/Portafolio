@@ -126,13 +126,16 @@ export default function Sidebar() {
       {/* Mobile Header */}
       <div className="md:hidden fixed top-0 left-0 right-0 bg-[#040b14] text-white p-4 z-50 flex items-center justify-between">
         <h1 className="text-lg font-semibold">{RESUME_DATA.name}</h1>
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="p-2 rounded-md hover:bg-gray-700"
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
-        </button>
+        <div className="flex items-center gap-2">
+          <LanguageSwitcher />
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="p-2 rounded-md hover:bg-gray-700"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Sidebar */}
