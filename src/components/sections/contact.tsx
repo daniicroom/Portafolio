@@ -62,7 +62,7 @@ export default function Contact() {
               <FiMapPin className="mx-auto" />
             </div>
             <h3 className="text-xl font-bold mb-2">{t('common.location')}</h3>
-            <p className="text-gray-600">{RESUME_DATA.location ?? "Unknown Location"}</p>
+            <p className="text-gray-600">{RESUME_DATA.personal.location ?? "Unknown Location"}</p>
           </div>
 
           <div className="bg-gray-50 p-8 rounded-lg text-center">
