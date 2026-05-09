@@ -19,6 +19,7 @@ const ICON_MAP: Record<string, React.ElementType> = {
   Education: PiStudent,
   Certification: PiCertificate,
   Portfolio: FiGrid,
+  Resume: PiCertificate,
   Contact: FiMail,
 };
 
@@ -26,6 +27,7 @@ export default function Sidebar() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
   const { locale } = useLanguage();
   const RESUME_DATA = getResumeData(locale);
 
@@ -41,6 +43,54 @@ export default function Sidebar() {
     );
   }, []);
 
+  // Intersection Observer para detectar secciones activas
+  useEffect(() => {
+    if (!mounted) return;
+
+    const sections = [
+      "hero",
+      "about",
+      "work-experience",
+      "education",
+      "certifications",
+      "portfolio",
+      "resume",
+      "contact",
+    ];
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "-50% 0px -50% 0px",
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sections.forEach((sectionId) => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      sections.forEach((sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          observer.unobserve(element);
+        }
+      });
+    };
+  }, [mounted]);
+
   if (!mounted) {
     return (
       <>
@@ -51,19 +101,36 @@ export default function Sidebar() {
     );
   }
 
+  const handleNavClick = (item: typeof NAV_LINKS[0]) => {
+    setIsMobileMenuOpen(false);
+    
+    // Si es Home, scroll al top y actualiza activeSection
+    if (item.href === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setActiveSection("hero");
+    } else {
+      // Para las demás secciones, actualiza activeSection
+      const sectionId = item.href.replace("#", "");
+      setActiveSection(sectionId);
+    }
+  };
+
   const renderNavItems = () =>
     NAV_LINKS.map((item) => {
       const IconComponent = ICON_MAP[item.label];
+      const sectionId = item.href === "/" ? "hero" : item.href.replace("#", "");
+      const isActive = activeSection === sectionId;
+
       return (
         <Link
           key={item.href}
           href={item.href}
           className={`flex items-center p-3 rounded-lg transition-colors ${
-            pathname === item.href
+            isActive
               ? "bg-blue-100 text-blue-600"
               : "text-gray-700 hover:bg-gray-100"
           }`}
-          onClick={() => setIsMobileMenuOpen(false)}
+          onClick={() => handleNavClick(item)}
         >
           {IconComponent && <IconComponent className="w-5 h-5 mr-3" />}
           <span>{item.label}</span>
@@ -87,11 +154,11 @@ export default function Sidebar() {
           <div className="flex flex-col items-center py-6">
             <Avatar className="w-24 h-24 mb-4">
               <AvatarImage
-                src={RESUME_DATA.avatarUrl}
-                alt={`${RESUME_DATA.name}'s avatar`}
+                src={RESUME_DATA.personal.avatarUrl}
+                alt={`${RESUME_DATA.personal.name}'s avatar`}
                 className="rounded-full border-4 border-white/30"
               />
-              <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
+              <AvatarFallback>{RESUME_DATA.personal.initials}</AvatarFallback>
             </Avatar>
             
             <div className="flex justify-center space-x-4 mt-4">
@@ -117,7 +184,7 @@ export default function Sidebar() {
             </div>
           </div>
 
-          <nav className="flex-1 space-y-2">
+          <nav className="flex-1 space-y-2 overflow-y-auto pr-2 sidebar-scrollable">
             {renderNavItems()}
           </nav>
         </div>
@@ -125,7 +192,7 @@ export default function Sidebar() {
 
       {/* Mobile Header */}
       <div className="md:hidden fixed top-0 left-0 right-0 bg-[#040b14] text-white p-4 z-50 flex items-center justify-between">
-        <h1 className="text-lg font-semibold">{RESUME_DATA.name}</h1>
+        <h1 className="text-lg font-semibold">{RESUME_DATA.personal.name}</h1>
         <div className="flex items-center gap-2">
           <LanguageSwitcher />
           <button
@@ -145,7 +212,7 @@ export default function Sidebar() {
         }`}
       >
         <div className="flex flex-col h-full p-4">
-          <nav className="flex-1 space-y-2">
+          <nav className="flex-1 space-y-2 overflow-y-auto pr-2 sidebar-scrollable">
             {renderNavItems()}
           </nav>
         </div>

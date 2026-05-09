@@ -54,6 +54,12 @@
       "sending": "Enviando...",
       "success": "¡Mensaje enviado exitosamente!",
       "error": "Error al enviar el mensaje. Por favor intenta nuevamente."
+    },
+    "resume": {
+      "title": "Obtén mi CV Profesional",
+      "description": "Descarga o visualiza mi CV completo con experiencia detallada, habilidades técnicas, certificaciones y logros clave. Perfecto para evaluar mi experiencia en posiciones Senior/Lead.",
+      "format": "Formato PDF",
+      "pages": "2 Páginas"
     }
   },
   "cv": {

@@ -50,14 +50,14 @@ export default function Portfolio() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <motion.div
+            <motion.article
               key={project.title + index}
-              className="bg-white rounded-lg overflow-hidden shadow-lg"
+              className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"
               whileHover={{ y: -10 }}
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div className="h-48 relative">
+              <div className="h-48 relative overflow-hidden bg-gray-100">
                 <Image
                   src={
                     typeof project.logo === "string"
@@ -66,40 +66,67 @@ export default function Portfolio() {
                   }
                   alt={project.title}
                   fill
-                  className="object-cover"
+                  className="object-cover hover:scale-105 transition-transform duration-300"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.techStack?.map((tech) => (
-                    <span
-                      key={tech}
-                      className="bg-gray-200 text-sm text-gray-800 px-2 py-1 rounded"
-                    >
-                      {tech}
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="text-xl font-bold text-gray-900 flex-1">{project.title}</h3>
+                  {project.role && (
+                    <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded whitespace-nowrap ml-2">
+                      {project.role}
                     </span>
-                  ))}
+                  )}
                 </div>
 
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
 
+                {/* Tech Stack */}
+                <div className="mb-4">
+                  <p className="text-xs font-semibold text-gray-700 mb-2 uppercase tracking-wider">Technologies</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.techStack?.map((tech) => (
+                      <span
+                        key={tech}
+                        className="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded border border-gray-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Impact */}
+                {project.impact && project.impact.length > 0 && (
+                  <div className="mb-4 pb-4 border-t border-gray-200">
+                    <p className="text-xs font-semibold text-gray-700 mb-2 uppercase tracking-wider">Impact</p>
+                    <ul className="space-y-1">
+                      {project.impact.map((item, i) => (
+                        <li key={i} className="text-sm text-gray-700 flex items-start">
+                          <span className="text-blue-500 mr-2">✓</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Link */}
                 {project.link?.href && (
                   <a
                     href={project.link.href}
-                    className="text-primary hover:text-primary-dark flex items-center"
+                    className="text-blue-600 hover:text-blue-800 font-semibold flex items-center transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {project.link.label || "View Project"}{" "}
-                    <FiExternalLink className="ml-2" />
+                    {project.link.label || "View Project"}
+                    <FiExternalLink className="ml-2 w-4 h-4" />
                   </a>
                 )}
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>

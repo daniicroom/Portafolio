@@ -28,89 +28,64 @@ export default function About() {
           <h2 className="text-4xl font-bold mb-4" data-aos="fade-up">
             {t('sections.about.title')}
           </h2>
+          <div 
+            className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-300 mx-auto mb-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          />
           <p
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            {RESUME_DATA.about}
+            {RESUME_DATA.summary.full}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        {/* Key Stats */}
+        <div className="grid md:grid-cols-3 gap-8 mb-20">
           {RESUME_DATA.stats.map((stat, index) => (
             <motion.div
               key={stat.label}
-              className="bg-gray-50 p-8 rounded-lg text-center"
+              className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-lg border-l-4 border-blue-500 text-center hover:shadow-lg transition-shadow"
               whileHover={{ scale: 1.05 }}
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div className="text-4xl text-primary mb-4">{stat.icon}</div>
-              <h3 className="text-3xl font-bold mb-2">{stat.value}+</h3>
-              <p className="text-gray-600">{stat.label}</p>
+              <div className="text-5xl text-blue-600 mb-4">{stat.icon}</div>
+              <h3 className="text-4xl font-bold text-gray-900 mb-2">{stat.value}+</h3>
+              <p className="text-gray-700 font-semibold">{stat.label}</p>
             </motion.div>
           ))}
         </div>
 
-        <div data-aos="fade-up" className="grid gap-8 mb-16">
-          <h3 className="text-2xl font-bold mb-6 text-center text-gray-800">{t('sections.about.subtitle')}</h3>
-          <p className="text-gray-600 mb-6">{RESUME_DATA.summary}</p>
+        {/* Technical Skills Section */}
+        <div data-aos="fade-up" className="mb-20">
+          <h3 className="text-3xl font-bold mb-12 text-center text-gray-900">{t('sections.about.technicalSkills')}</h3>
           
-          <div className="flex flex-wrap gap-4">
-            <button
-              onClick={() => import("../pdf/ViewerWrapper").then((m) => m.viewPDFInNewTab())}
-              className="bg-[var(--primary-color)] text-white px-6 py-3 rounded-lg transition-colors hover:bg-[var(--secondary-color)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-color)]"
-            >
-              {t('sections.about.seeCv')}
-            </button>
-            <button
-              onClick={() => import("../pdf/download-pdf").then((m) => m.generatePDF())}
-              className="bg-[var(--primary-color)] text-white px-6 py-3 rounded-lg transition-colors hover:bg-[var(--secondary-color)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-color)]"
-            >
-              {t('sections.about.downloadCv')}
-            </button>
-          </div>
-        </div>
-
-        <div data-aos="fade-up">
-          <h3 className="text-2xl font-bold mb-6 text-center text-gray-800">{t('sections.about.technicalSkills')}</h3>
-          
-          <div className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {RESUME_DATA.skills.map((skill) => (
-                    <div key={`${skill.name}`} className="mb-4">
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="font-medium text-gray-800">
-                          {skill.name}
-                        </span>
-                      </div>
-                      
-                      <div className="w-full bg-gray-200 rounded-full h-2.5">
-                        <div
-                          className="h-2.5 rounded-full transition-all duration-700 ease-in-out"
-                          style={{
-                            width: `${skill.percent}%`,
-                            background: "linear-gradient(90deg, var(--primary-color), var(--secondary-color))"
-                          }}
-                        ></div>
-                      </div>
-                      
-                      {skill.keywords && skill.keywords.length > 0 && (
-                        <div className="mt-2 flex flex-wrap gap-2">
-                          {skill.keywords.map((keyword) => (
-                            <span 
-                              key={keyword} 
-                              className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded"
-                            >
-                              {keyword}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {RESUME_DATA.skills.map((skillGroup) => (
+              <motion.div
+                key={skillGroup.category}
+                className="bg-white rounded-lg border-2 border-blue-200 p-6 hover:shadow-lg transition-shadow"
+                whileHover={{ y: -5 }}
+                data-aos="fade-up"
+              >
+                <h4 className="text-lg font-bold text-gray-900 mb-4 pb-2 border-b-2 border-blue-300">
+                  {skillGroup.category}
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {skillGroup.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="bg-gradient-to-r from-blue-50 to-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full border border-blue-300 hover:bg-gradient-to-r hover:from-blue-100 hover:to-blue-200 transition-colors"
+                    >
+                      {skill}
+                    </span>
                   ))}
                 </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>

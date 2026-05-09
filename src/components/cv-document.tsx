@@ -20,64 +20,69 @@ Font.register({
 
 const styles = StyleSheet.create({
   page: {
-    padding: 18,
+    padding: 12,
     fontFamily: 'IBM Plex Serif',
-    fontSize: 14,
-    lineHeight: 1.5,
+    fontSize: 11,
+    lineHeight: 1.3,
     backgroundColor: '#ffffff'
   },
   container: {
-    marginLeft: 10,
+    marginLeft: 5,
   },
   header: {
-    marginBottom: 16,
+    marginBottom: 10,
     textAlign: 'center'
   },
   name: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 10,
+    marginBottom: 8,
   },
   headline: {
     fontSize: 10,
-    letterSpacing: 4,
-    marginBottom: 6,
-    textTransform: 'uppercase'
+    letterSpacing: 0.5,
+    marginBottom: 3,
+    textTransform: 'uppercase',
+    fontWeight: 'bold'
   },
   contact: {
     flexDirection: 'row',
     justifyContent: 'center',
-    gap: 12,
-    marginTop: 4
+    gap: 8,
+    marginTop: 2,
+    fontSize: 9
   },
   sectionTitle: {
-    fontSize: 16,
+    fontSize: 12,
     fontWeight: 'bold',
-    marginVertical: 8,
+    marginVertical: 4,
     color: '#475569',
     borderBottomWidth: 1,
     borderBottomColor: '#475569',
-    paddingBottom: 4,
-    marginLeft: -10
+    paddingBottom: 2,
+    marginLeft: -5
   },
   boldText: {
     fontWeight: 'bold',
-    marginBottom: 4
+    marginBottom: 2
   },
   jobCompany: {
     fontWeight: 'bold',
-    marginTop: 6
+    marginTop: 3,
+    fontSize: 11
   },
   jobPosition: {
-    fontStyle: 'italic'
+    fontStyle: 'italic',
+    fontSize: 10
   },
   jobDate: {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    fontSize: 10
   },
   jobLink: {
     color: '#475569',
     textDecoration: 'none',
-    marginBottom: 4
+    marginBottom: 2
   },
   educationRow: {
     flexDirection: 'row',
@@ -142,28 +147,28 @@ export const CVDocument = ({ locale = "en" }: { locale?: Locale }) => {
   };
 
   return (
-  <Document title={`Resume - ${RESUME_DATA.name}`}>
+  <Document title={`Resume - ${RESUME_DATA.personal.name}`}>
     <Page size="A4" style={styles.page}>
       <View style={styles.container}>
         <View style={styles.header}>
-          <Text style={styles.name}>{RESUME_DATA.name}</Text>
-          <Text style={styles.headline}>{RESUME_DATA.specialty}</Text>
+          <Text style={styles.name}>{RESUME_DATA.personal.name}</Text>
+          <Text style={styles.headline}>{RESUME_DATA.personal.title}</Text>
           <View style={styles.contact}>
             <Text>{RESUME_DATA.contact.email}</Text>
             <Text>{RESUME_DATA.contact.tel}</Text>
-            <Text>{RESUME_DATA.location}</Text>
+            <Text>{RESUME_DATA.personal.location}</Text>
           </View>
         </View>
 
         <Text style={styles.sectionTitle}>{translations.summary}</Text>
-        <Text>{RESUME_DATA.summary}</Text>
+        <Text>{RESUME_DATA.summary.full}</Text>
 
         <Text style={styles.sectionTitle}>{translations.experience}</Text>
         {RESUME_DATA.work.map((job, index) => (
-          <View key={index} style={{ marginBottom: 12 }}>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          <View key={index} style={{ marginBottom: 8 }}>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 1 }}>
               <Text style={styles.jobCompany}>{job.company}</Text>
-              <Text style={styles.boldText}>{job.start} - {job.end}</Text>
+              <Text style={styles.jobDate}>{job.start} - {job.end}</Text>
             </View>
             <Text style={styles.jobPosition}>{job.title}</Text>
             {job.link && (
@@ -171,26 +176,37 @@ export const CVDocument = ({ locale = "en" }: { locale?: Locale }) => {
                 {job.link.replace('https://', '')}
               </Link>
             )}
-            <Text>{job.description.replace(/^-+\s*/gm, '')}</Text>
+            {Array.isArray((job as any).technologies) && (job as any).technologies.length > 0 && (
+              <Text style={{ fontSize: 8, marginBottom: 2, marginTop: 2 }}>
+                Tech: {(job as any).technologies.join(', ')}
+              </Text>
+            )}
+            {Array.isArray(job.achievements) && job.achievements.length > 0 && (
+              <View style={{ marginTop: 2 }}>
+                {job.achievements.slice(0, 3).map((achievement, i) => (
+                  <Text key={i} style={{ fontSize: 8, marginBottom: 1 }}>
+                    • {achievement}
+                  </Text>
+                ))}
+              </View>
+            )}
           </View>
         ))}
 
         <Text style={styles.sectionTitle}>{translations.education}</Text>
         {RESUME_DATA.education.map((edu, index) => (
-          <View key={index} style={styles.educationRow}>
-            <View style={{ width: '70%' }}>
-              <Text style={styles.boldText}>{edu.school}</Text>
-              <Text>{edu.degree}</Text>
+          <View key={index} style={{ marginBottom: 4, flexDirection: 'row', justifyContent: 'space-between' }}>
+            <View style={{ flex: 1 }}>
+              <Text style={{ fontSize: 10, fontWeight: 'bold' }}>{edu.school}</Text>
+              <Text style={{ fontSize: 9 }}>{edu.degree}</Text>
             </View>
-            <View style={{ width: '30%', alignItems: 'flex-end' }}>
-              <Text style={styles.boldText}>{edu.start} - {edu.end}</Text>
-            </View>
+            <Text style={{ fontSize: 9, fontWeight: 'bold', marginLeft: 8 }}>{edu.start} - {edu.end}</Text>
           </View>
         ))}
 
         <Text style={styles.sectionTitle}>{translations.volunteering}</Text>
         {RESUME_DATA.volunteering.map((vol, index) => (
-          <View key={index} style={{ marginBottom: 12 }}>
+          <View key={index} style={{ marginBottom: 6 }}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
               <Text style={styles.boldText}>{vol.organization}</Text>
               <Text style={styles.boldText}>{vol.start} - {vol.end}</Text>
@@ -200,62 +216,68 @@ export const CVDocument = ({ locale = "en" }: { locale?: Locale }) => {
           </View>
         ))}
 
-        {/* Skills Section - Organized by Category */}
+        {/* Skills Section - Organized by Category (2 Columns) */}
         <Text style={styles.sectionTitle}>{translations.technicalSkills}</Text>
-        <View style={styles.skillsContainer}>
-              {RESUME_DATA.skills.map((skill, skillIndex) => (
-                <View key={skillIndex} style={styles.skillItem}>
-                  <View style={styles.skillNameLevel}>
-                    <Text style={styles.skillName}>{skill.name}</Text>
-                    <Text style={styles.skillLevel}>({getSkillLevel(skill.percent)})</Text>
-                  </View>
-                  <Text style={styles.skillKeywords}>
-                    {skill.keywords.join(', ')}
-                  </Text>
-                </View>
-              ))}
+        <View style={{ flexDirection: 'row', gap: 12 }}>
+          <View style={{ flex: 1 }}>
+            {RESUME_DATA.skills.slice(0, Math.ceil(RESUME_DATA.skills.length / 2)).map((skillCategory, skillIndex) => (
+              <View key={skillIndex} style={{ marginBottom: 6 }}>
+                <Text style={{ fontSize: 9, fontWeight: 'bold', marginBottom: 2, color: '#1f2937' }}>
+                  {skillCategory.category}
+                </Text>
+                <Text style={{ fontSize: 8, marginBottom: 4 }}>
+                  {skillCategory.skills.join(', ')}
+                </Text>
+              </View>
+            ))}
+          </View>
+          <View style={{ flex: 1 }}>
+            {RESUME_DATA.skills.slice(Math.ceil(RESUME_DATA.skills.length / 2)).map((skillCategory, skillIndex) => (
+              <View key={skillIndex} style={{ marginBottom: 6 }}>
+                <Text style={{ fontSize: 9, fontWeight: 'bold', marginBottom: 2, color: '#1f2937' }}>
+                  {skillCategory.category}
+                </Text>
+                <Text style={{ fontSize: 8, marginBottom: 4 }}>
+                  {skillCategory.skills.join(', ')}
+                </Text>
+              </View>
+            ))}
+          </View>
         </View>
 
         <Text style={styles.sectionTitle}>{translations.certifications}</Text>
         {RESUME_DATA.certifications.map((cert, index) => (
-          <View key={index} style={styles.certification}>
+          <View key={index} style={{ marginBottom: 4 }}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-              <Text style={styles.boldText}>{cert.name}</Text>
-              <Text style={styles.boldText}>{cert.year}</Text>
+              <Text style={{ fontSize: 10, fontWeight: 'bold' }}>{cert.name}</Text>
+              <Text style={{ fontSize: 9, fontWeight: 'bold' }}>{cert.year}</Text>
             </View>
-            <Text>{cert.issuer}</Text>
+            <Text style={{ fontSize: 8 }}>{cert.issuer}</Text>
           </View>
         ))}
 
         <Text style={styles.sectionTitle}>{translations.awards}</Text>
         {RESUME_DATA.awards.map((award, index) => (
-          <View key={index} style={{ marginBottom: 12 }}>
+          <View key={index} style={{ marginBottom: 4 }}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-              <Text style={styles.boldText}>{award.title}</Text>
-              <Text style={styles.boldText}>{award.year}</Text>
+              <Text style={{ fontSize: 10, fontWeight: 'bold' }}>{award.title}</Text>
+              <Text style={{ fontSize: 9, fontWeight: 'bold' }}>{award.year}</Text>
             </View>
-            <Text style={styles.jobPosition}>{award.awarder}</Text>
-            <Text>{award.description}</Text>
+            <Text style={{ fontSize: 9, fontStyle: 'italic' }}>{award.awarder}</Text>
+            <Text style={{ fontSize: 8 }}>{award.description}</Text>
           </View>
         ))}
 
          {/* Languages */}
         <Text style={styles.sectionTitle}>{translations.languages}</Text>
         {RESUME_DATA.languages.map((lang, index) => (
-          <View key={index} style={{ marginBottom: 6 }}>
-            <Text style={styles.boldText}>{lang.name}</Text>
-            <Text>{lang.level}</Text>
+          <View key={index} style={{ marginBottom: 2 }}>
+            <Text style={{ fontSize: 10, fontWeight: 'bold' }}>{lang.name}</Text>
+            <Text style={{ fontSize: 9 }}>{lang.level}</Text>
           </View>
         ))}
       </View>
     </Page>
   </Document>
   );
-};
-
-export const getSkillLevel = (percent: number) => {
-  if (percent >= 90) return 'Expert';
-  if (percent >= 70) return 'Advanced';
-  if (percent >= 50) return 'Intermediate'; 
-  return 'Basic';
 };

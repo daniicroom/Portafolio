@@ -7,6 +7,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/layout/sidebar";
+import ResumeFloatButton from "@/components/ResumeFloatButton";
 import { LanguageProvider } from "@/components/providers/LanguageProvider";
 import { IntlProvider } from "@/components/providers/IntlProvider";
 
@@ -56,7 +57,7 @@ export default async function RootLayout({
   const initialMessages = await getInitialMessages();
 
   return (
-    <html lang="en" className={`
+    <html lang="en" suppressHydrationWarning className={`scroll-smooth
       ${inter.variable}
       ${openSans.variable}
       ${raleway.variable}
@@ -71,6 +72,7 @@ export default async function RootLayout({
                 {children}
               </main>
             </div>
+            <ResumeFloatButton />
           </LanguageProvider>
         </IntlProvider>
       </body>

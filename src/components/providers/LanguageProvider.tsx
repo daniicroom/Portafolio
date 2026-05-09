@@ -26,6 +26,8 @@ export function LanguageProvider({ children, initialLocale = "en" }: LanguagePro
     const saved = localStorage.getItem("locale");
     if (saved && (saved === "en" || saved === "es")) {
       setLocaleState(saved);
+      // Dispatch event so IntlProvider updates
+      window.dispatchEvent(new CustomEvent("localeChange", { detail: saved }));
     }
   }, []);
 

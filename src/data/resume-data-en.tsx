@@ -5,32 +5,62 @@ import {
   FirmaSeguro,
   AuraQuantic,
 } from "../../public/img/logos";
-import { FiGithub, FiLinkedin, FiAward, FiUser, FiFolder } from "react-icons/fi";
+
+import {
+  FiGithub,
+  FiLinkedin,
+  FiAward,
+  FiUser,
+  FiFolder,
+} from "react-icons/fi";
 
 export const RESUME_DATA_EN = {
-  name: "Juan Daniel Valbuena Tapias",
-  initials: "JV",
-  location: "Medellín, Colombia",
-  locationLink: "https://www.google.com/maps/place/Medellín,+Antioquia",
-  specialty: ".NET Software Developer",
-  about:
-    "Full Stack Developer focused on building secure and scalable systems",
-  summary:
-    "Systems Engineer with more than 4 years of experience in software development and technical leadership. Expert in modern technologies such as C#, JavaScript, SQL, Docker, AWS and Azure. Proven experience in platform scaling, agile team leadership and deployment of critical systems in production.",
-  avatarUrl: "/img/profile.jpeg",
-  personalWebsiteUrl: "https://portafolio-mfbf.vercel.app/",
+  personal: {
+    name: "Juan Daniel Valbuena Tapias",
+    initials: "JV",
+
+    title:
+      "Senior Full Stack .NET Engineer | Lead Product Developer",
+
+    specialty:
+      "SaaS Architecture, Enterprise Integrations, Cloud, Automation and Applied AI",
+
+    location: "Medellín, Colombia",
+
+    locationLink:
+      "https://www.google.com/maps/place/Medellín,+Antioquia",
+
+    avatarUrl: "/img/profile.jpeg",
+
+    personalWebsiteUrl:
+      "https://portafolio-mfbf.vercel.app/",
+  },
+
+  summary: {
+    short:
+      "Senior Full Stack .NET Engineer specialized in SaaS platforms, automation, distributed architecture, and enterprise integrations.",
+
+    full:
+      "Systems Engineer with more than 4 years of experience in software development, technical leadership, and enterprise platform engineering. Specialized in multi-tenant SaaS architecture, REST APIs, microservices, CI/CD automation, systems integration, and scalable cloud solutions on AWS and Azure.\n\n" +
+      "Experience designing distributed systems using queues, workers, and asynchronous processing with RabbitMQ, and Redis. Knowledge of SSO/OIDC authentication, workflow automation, and developer productivity optimization through Applied AI, Claude Code, MCP Servers, agentic systems, and n8n.\n\n" +
+      "Strong ability to lead technical teams, participate in architectural decision-making, optimize critical deployments, and build business-oriented solutions.",
+  },
+
   contact: {
     email: "daniicroom@gmail.com",
     tel: "+573108234666",
+
     social: [
       {
         name: "GitHub",
         url: "https://github.com/daniicroom",
+        username: "daniicroom",
         icon: FiGithub,
       },
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/daniel-valbuena-295916b1/",
+        url:
+          "https://www.linkedin.com/in/daniel-valbuena-295916b1/",
         icon: FiLinkedin,
       },
     ],
@@ -38,13 +68,13 @@ export const RESUME_DATA_EN = {
 
   education: [
     {
-      school: "Metropolitan Technological Institute",
+      school: "Instituto Tecnológico Metropolitano",
       degree: "Systems Engineering",
       start: "2022",
       end: "2023",
     },
     {
-      school: "Metropolitan Technological Institute",
+      school: "Instituto Tecnológico Metropolitano",
       degree: "Information Systems Technology",
       start: "2017",
       end: "2022",
@@ -54,7 +84,8 @@ export const RESUME_DATA_EN = {
   certifications: [
     {
       name: "AWS Certified Cloud Practitioner",
-      issuer: "Amazon Web Services Training and Certification",
+      issuer:
+        "Amazon Web Services Training and Certification",
       year: 2024,
     },
     {
@@ -64,7 +95,7 @@ export const RESUME_DATA_EN = {
     },
     {
       name: "Software Development Fundamentals",
-      issuer: "Microsoft and LinkedIn",
+      issuer: "Microsoft & LinkedIn",
       year: 2023,
     },
     {
@@ -84,150 +115,308 @@ export const RESUME_DATA_EN = {
     },
   ],
 
+  skills: [
+    {
+      category: "Backend",
+      skills: [
+        "C#",
+        ".NET Core",
+        "ASP.NET",
+        "Entity Framework",
+        "Minimal APIs",
+        "Microservices",
+        "SignalR",
+        "Hangfire",
+        "xUnit",
+        "Moq",
+        "Razor",
+      ],
+    },
+
+    {
+      category: "Frontend",
+      skills: [
+        "React",
+        "Next.js",
+        "JavaScript",
+        "TypeScript",
+        "HTML",
+        "CSS",
+        "jQuery",
+        "Ajax",
+      ],
+    },
+
+    {
+      category: "Cloud & DevOps",
+      skills: [
+        "AWS",
+        "Azure",
+        "Docker",
+        "CI/CD",
+        "GitHub Actions",
+        "Elastic Beanstalk",
+        "Linux",
+        "IIS",
+      ],
+    },
+
+    {
+      category: "Databases",
+      skills: [
+        "SQL Server",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "ETL",
+        "Database Design",
+      ],
+    },
+
+    {
+      category: "Integrations & APIs",
+      skills: [
+        "REST APIs",
+        "SOAP",
+        "JWT",
+        "OAuth",
+        "OIDC",
+        "SSO",
+        "Microsoft Graph",
+        "Twilio",
+        "Enterprise Integrations",
+      ],
+    },
+
+    {
+      category: "Architecture & Scalability",
+      skills: [
+        "SaaS Architecture",
+        "Multi-tenant",
+        "Horizontal Scaling",
+        "Distributed Architecture",
+        "Workers",
+        "Asynchronous Processing",
+        "Background Jobs",
+      ],
+    },
+
+    {
+      category: "Messaging & Processing",
+      skills: [
+        "RabbitMQ",
+        "Redis Streams",
+        "Distributed Queues",
+        "Asynchronous Messaging",
+      ],
+    },
+
+    {
+      category: "Testing & Quality",
+      skills: [
+        "Playwright",
+        "JMeter",
+        "Automated Testing",
+        "E2E Testing",
+        "Load Testing",
+        "Functional Testing",
+      ],
+    },
+
+    {
+      category: "Applied AI & Automation",
+      skills: [
+        "Claude Code",
+        "MCP Servers",
+        "AI Agents",
+        "Agentic Systems",
+        "Custom Skills",
+        "AI-assisted Development",
+        "Workflow Automation",
+        "n8n",
+        "Prompt Workflows",
+      ],
+    },
+  ],
+
   work: [
     {
       company: "Treda Solutions S.A.S",
       link: "https://tredasolutions.com/",
       badges: ["Remote"],
+
       title: "Lead Product Developer",
+
       logo: TredaLogo,
+
       start: "2024",
       end: "Present",
-      description:
-        "As Lead Product Developer, I lead the complete product development cycle aligned with the roadmap, ensuring delivery of high-quality and timely features.\n\n" +
-        "Key Responsibilities:\n" +
-        "- Led and coordinated the technical team to ensure roadmap objectives execution.\n" +
-        "- Task prioritization and validation of technical and functional feasibility.\n" +
-        "- Collaboration with the commercial team to align business objectives with product development.\n" +
-        "- Direct participation in feature development and legacy code refactoring.\n" +
-        "- Planning, execution and optimization of CI/CD deployments in production environments.\n" +
-        "- Automation of deployment scripts and operating system updates on critical infrastructure.\n" +
-        "- Technical support to external users during API integrations and training.\n\n" +
-        "Key Achievements:\n" +
-        "- 95% successful deployments without critical incidents.\n" +
-        "- Infrastructure scaling to support 383% increase in transactional volume.\n" +
-        "- 50% reduction in deployment time through automation.",
+
+      technologies: [
+        ".NET",
+        "AWS",
+        "Docker",
+        "RabbitMQ",
+        "Redis",
+        "CI/CD",
+        "SQL Server",
+        "JavaScript",
+        "GitHub Actions",
+        "OAuth/OIDC",
+      ],
+
+      achievements: [
+        "Led technical roadmap execution and coordinated the development team.",
+        "Designed and evolved multi-tenant SaaS architecture.",
+        "Scaled infrastructure to support a 383% increase in transaction volume.",
+        "Reduced deployment times by 50% through CI/CD automation.",
+        "Maintained a success rate above 95% for production deployments.",
+        "Implemented automation and productivity workflows using Claude Code, MCP Servers, and n8n.",
+        "Designed enterprise integrations using REST and SOAP APIs.",
+        "Implemented SSO/OIDC authentication and queue/worker-based architectures.",
+        "Provided technical mentoring, code reviews, and team guidance.",
+      ],
     },
+
     {
       company: "Treda Solutions S.A.S",
       link: "https://tredasolutions.com/",
       badges: ["Remote"],
+
       title: "R&D Developer",
+
       logo: TredaLogo,
+
       start: "2021",
       end: "2024",
-      description:
-        "As a developer in the Research, Development and Innovation (R&D) area, I focused on planning, developing and implementing projects oriented to innovation and creation of new products and features.\n\n" +
-        "Projects:\n" +
-        "- FirmaSeguro\n" +
-        "- AgRisk\n\n" +
-        "Main Functions:\n" +
-        "- Strategic planning\n" +
-        "- Research and analysis\n" +
-        "- Prototype development and experimentation\n" +
-        "- Interdisciplinary collaboration\n" +
-        "- Development of innovative products\n" +
-        "- Evaluation and continuous improvement",
+
+      technologies: [
+        ".NET Core",
+        "Azure",
+        "JavaScript",
+        "MySQL",
+        "Twilio",
+      ],
+
+      achievements: [
+        "Researched, designed, and developed new enterprise products and features.",
+        "Contributed to the development of FirmaSeguro and AgRisk.",
+        "Built prototypes and validated technical solutions.",
+        "Automated business processes and enterprise integrations.",
+        "Developed scalable and security-oriented functionalities.",
+      ],
     },
+
     {
-      company: "Importaciones y Soluciones de Ingeniería S.A.S",
+      company:
+        "Importaciones y Soluciones de Ingeniería S.A.S",
+
       link: "",
+
       badges: [],
+
       title: "Technology Instructor",
+
       logo: NoLogo,
+
       start: "2021",
       end: "2021",
-      description:
-        "As a technology instructor I was responsible for training and strengthening staff skills in the use of immersive technologies.\n\n" +
-        "Responsibilities:\n" +
-        "- Training in use and support of Oculus Quest 2 devices.\n" +
-        "- Design and execution of practical technical workshops.\n" +
-        "- Guidance in troubleshooting and implementation best practices.",
-    },
-  ],
 
-  skills: [
-    {
-      name: "C#",
-      percent: 90,
-      keywords: ["Entity Framework", "ASP.NET", "xUnit", "Moq", "Razor"],
-    },
-    {
-      name: "Cloud",
-      percent: 85,
-      keywords: ["AWS", "Azure", "Lambda", "SQS", "Docker", "Meta Services"],
-    },
-    {
-      name: "JavaScript",
-      percent: 85,
-      keywords: ["Ajax", "JQuery", "HTML", "CSS"],
-    },
-    {
-      name: "SQL and NoSQL",
-      percent: 80,
-      keywords: ["ETL", "Relational databases", "MySQL", "MongoDB", "SQL Server"],
-    },
-    {
-      name: "APIs and Integration",
-      percent: 80,
-      keywords: ["REST", "SOAP", "Microservices", "JWT", "OAuth"],
-    },
-    {
-      name: "DevOps Tools",
-      percent: 75,
-      keywords: ["GitHub", "GitKraken", "Sourcetree", "Postman", "Rocketbot"],
+      achievements: [
+        "Provided technical training for Oculus Quest 2 devices.",
+        "Designed and delivered hands-on technology workshops.",
+        "Supported troubleshooting and technical guidance.",
+      ],
     },
   ],
 
   projects: [
     {
       title: "FirmaSeguro",
+
+      role: "Lead Product Developer",
+
       techStack: [
         "Enterprise SaaS",
-        ".Net Core",
-        "JavaScript",
-        "Andes SCD",
-        "Twilio",
+        ".NET Core",
         "AWS",
-        "CI/CD",
-        "REST API",
-        "ElasticBeanstalk",
         "Docker",
+        "Twilio",
+        "REST APIs",
+        "CI/CD",
+        "Elastic Beanstalk",
       ],
+
+      impact: [
+        "Platform scaled to over 100,000 digital signatures.",
+        "Implemented WhatsApp authentication.",
+        "Designed multi-tenant and white-label architecture.",
+      ],
+
       description:
-        "Advanced electronic signature platform that simplifies and secures digital processes through configurable workflows, ensuring authenticity, integrity and legal validity of documents.",
+        "Advanced electronic signature platform focused on scalability, automation, and document security.",
+
       logo: FirmaSeguro,
+
       link: {
         label: "firmaseguro.co",
         href: "https://firmaseguro.co/",
       },
     },
+
     {
       title: "AgRisk",
-      techStack: [".Net Core", "Azure", "Microsoft Graph", "JavaScript", "MySQL"],
+
+      role: "Full Stack Developer",
+
+      techStack: [
+        ".NET Core",
+        "Azure",
+        "Microsoft Graph",
+        "JavaScript",
+        "MySQL",
+      ],
+
+      impact: [
+        "Digitized agro-industrial evaluation processes.",
+        "Automated reports and analysis workflows.",
+      ],
+
       description:
-        "Specialized system for agro-industrial risk management, farm assessment and intelligent report generation.",
+        "Specialized platform for agro-industrial risk management and farm evaluation.",
+
       logo: AgRisk,
+
       link: {
         label: "agrisk.com.co",
         href: "https://agrisk.com.co/",
       },
     },
+
     {
       title: "AuraQuantic Integrations",
+
+      role: "Backend Developer",
+
       techStack: [
-        "Enterprise Integration",
         "AuraQuantic",
-        "C#",
         ".NET Core",
         "REST APIs",
         "SOAP",
         "SQL Server",
         "IIS",
       ],
+
+      impact: [
+        "Automated enterprise business processes.",
+        "Integrated multiple corporate platforms.",
+      ],
+
       description:
-        "Development of custom integrations for business process automation using C# and .NET Core.",
+        "Development of custom enterprise integrations using C# and .NET.",
+
       logo: AuraQuantic,
+
       link: {
         label: "auraquantic.com",
         href: "https://www.auraquantic.com/es/",
@@ -235,54 +424,160 @@ export const RESUME_DATA_EN = {
     },
   ],
 
-  stats: [
-    { value: 4, label: "Years of experience", icon: <FiAward /> },
-    { value: 10, label: "Completed projects", icon: <FiFolder /> },
-    { value: 2, label: "Products developed", icon: <FiUser /> },
+  architecture: [
+    "SaaS Architecture",
+    "Multi-tenant",
+    "OAuth/OIDC",
+    "SSO",
+    "CI/CD",
+    "Microservices",
+    "Workers",
+    "Background Jobs",
+    "Distributed Architecture",
+    "Asynchronous Processing",
+    "Enterprise Integrations",
   ],
 
-  references: [
-    { name: "Erika Romero", position: "Systems Engineer", contact: "" },
-    { name: "Cristhian Sandoval", position: "Systems Engineer", contact: "" },
+  leadership: [
+    "Technical Mentoring",
+    "Code Reviews",
+    "Technical Planning",
+    "Architecture Definition",
+    "Developer Guidance",
+    "Technical Roadmap Coordination",
+    "Technical Prioritization",
+    "Enterprise Integration Support",
+  ],
+
+  focusAreas: [
+    "SaaS Platforms",
+    "Enterprise Integrations",
+    "Scalability",
+    "Distributed Architecture",
+    "Developer Productivity",
+  ],
+
+  coreCompetencies: [
+    "SaaS Architecture",
+    "Full Stack Development",
+    "Microservices",
+    "Cloud Computing",
+    "Enterprise Integrations",
+    "Multi-tenant Architecture",
+    "Distributed Messaging",
+    "Automation",
+    "Technical Leadership",
+  ],
+
+  tooling: [
+    "Claude Code",
+    "GitHub",
+    "GitHub Actions",
+    "Postman",
+    "Docker",
+    "Sourcetree",
+    "GitKraken",
+    "n8n",
+    "Playwright",
+  ],
+
+  aiExperience: [
+    "AI-powered development automation",
+    "MCP Server configuration",
+    "Agentic systems development",
+    "Workflow automation",
+    "Developer productivity optimization using AI",
+  ],
+
+  stats: [
+    {
+      value: 4,
+      label: "Years of Experience",
+      icon: <FiAward />,
+    },
+    {
+      value: 10,
+      label: "Completed Projects",
+      icon: <FiFolder />,
+    },
+    {
+      value: 4,
+      label: "Products Developed",
+      icon: <FiUser />,
+    },
   ],
 
   awards: [
     {
       title: "Excellence Recognition",
       awarder: "Treda Solutions S.A.S.",
+
       description:
-        "For consolidating the FirmaSeguro architecture and its white labels, reaching 100,000 digital signatures.",
+        "For consolidating the FirmaSeguro architecture and white-label ecosystem, reaching more than 100,000 digital signatures.",
+
       year: 2025,
     },
+
     {
       title: "Gold Excellence Recognition",
       awarder: "Treda Solutions S.A.S.",
+
       description:
-        "For leadership of the development team and fast delivery of new features.",
+        "For technical leadership and rapid delivery of critical features.",
+
       year: 2024,
     },
+
     {
       title: "Gold Excellence Recognition",
       awarder: "Treda Solutions S.A.S.",
+
       description:
-        "For development of the certified digital signature microservice and WhatsApp authentication.",
+        "For developing the certified digital signature microservice and WhatsApp authentication.",
+
       year: 2022,
     },
   ],
 
   languages: [
-    { name: "Spanish", level: "Native", proficiency: 5 },
-    { name: "English", level: "Intermediate", proficiency: 3 },
+    {
+      name: "Spanish",
+      level: "Native",
+      proficiency: 5,
+    },
+
+    {
+      name: "English",
+      level: "B1",
+      proficiency: 3,
+    },
   ],
 
   volunteering: [
     {
       organization: "Fundación Huellas",
+
       role: "Volunteer Teacher",
+
       description:
-        "Academic and recreational accompaniment to children and young people, and support to the foundation's information systems.",
+        "Provided academic and recreational support for children and young people, as well as technology and information systems assistance.",
+
       start: "2017",
       end: "2023",
+    },
+  ],
+
+  references: [
+    {
+      name: "Erika Romero",
+      position: "Systems Engineer",
+      contact: "",
+    },
+
+    {
+      name: "Cristhian Sandoval",
+      position: "Systems Engineer",
+      contact: "",
     },
   ],
 } as const;

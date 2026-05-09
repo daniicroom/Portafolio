@@ -54,6 +54,12 @@
       "sending": "Sending...",
       "success": "Message sent successfully!",
       "error": "Failed to send message. Please try again."
+    },
+    "resume": {
+      "title": "Get My Professional Resume",
+      "description": "Download or view my comprehensive CV with detailed experience, technical skills, certifications, and key achievements. Perfect for evaluating my expertise for Senior/Lead positions.",
+      "format": "PDF Format",
+      "pages": "2 Pages"
     }
   },
   "cv": {
