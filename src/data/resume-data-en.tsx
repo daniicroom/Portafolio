@@ -71,7 +71,7 @@ export const RESUME_DATA_EN = {
       school: "Instituto Tecnológico Metropolitano",
       degree: "Systems Engineering",
       start: "2022",
-      end: "2023",
+      end: "2024",
     },
     {
       school: "Instituto Tecnológico Metropolitano",
@@ -491,7 +491,7 @@ export const RESUME_DATA_EN = {
 
   stats: [
     {
-      value: 4,
+      value: 5,
       label: "Years of Experience",
       icon: <FiAward />,
     },
