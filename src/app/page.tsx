@@ -8,7 +8,7 @@ import Certification from "../components/sections/certifications";
 
 export default function Page() {
   return (
-    <main>
+    <div>
       <Hero />
       <About />
       <Experience />
@@ -16,6 +16,6 @@ export default function Page() {
       <Certification />
       <Portfolio />
       <Contact />
-    </main>
+    </div>
   );
 }

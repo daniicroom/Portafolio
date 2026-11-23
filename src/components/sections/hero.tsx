@@ -23,47 +23,52 @@ export default function Hero() {
     initAOS();
   }, []);
 
-  const { avatarUrl, name, specialty } = RESUME_DATA.personal;
+  const { avatarUrl, name, title, specialty } = RESUME_DATA.personal;
   const { contact, summary } = RESUME_DATA;
   const socialLinks = contact?.social ?? [];
+  const titleParts = title.split("|").map((part) => part.trim());
+  const primaryTitle = titleParts[0] || title;
+  const secondaryTitle = titleParts[1];
 
   if (!mounted) return null;
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center bg-[url('/img/hero-bg.jpg')] bg-cover bg-center bg-no-repeat bg-fixed"
+      className="relative min-h-[100svh] flex items-center justify-center pt-24 pb-12 md:pt-0 md:pb-8 bg-[url('/img/hero-bg.jpg')] bg-cover bg-center bg-no-repeat"
       role="banner"
       aria-label="Hero section"
     >
       <div className="absolute inset-0 bg-black/50" />
 
-      <div className="relative z-10 container mx-auto px-6 text-center pb-8" data-aos="fade-up">
-        <div className="mb-8">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center" data-aos="fade-up">
+        <div className="mb-5 md:mb-8">
           <Image
             src={avatarUrl}
             alt={`${name} Profile Picture`}
             width={150}
             height={150}
-            className="rounded-full border-4 border-white/30 mx-auto"
+            className="h-28 w-28 md:h-36 md:w-36 rounded-full object-cover border-4 border-white/30 mx-auto"
             priority
             loading="eager"
           />
         </div>
 
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 tracking-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 tracking-tight">
           {name}
         </h1>
         
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-400 mb-4">
-          Senior Full Stack .NET Engineer
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-400 mb-3">
+          {primaryTitle}
         </h2>
         
-        <p className="text-lg md:text-xl text-gray-300 mb-8 font-semibold leading-relaxed">
-          Lead Product Developer <span className="text-blue-300">•</span> SaaS Architecture <span className="text-blue-300">•</span> Distributed Systems
-        </p>
+        {secondaryTitle && (
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-5 font-semibold leading-relaxed">
+            {secondaryTitle}
+          </p>
+        )}
         
-        <p className="text-base md:text-lg text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed opacity-90">
+        <p className="text-sm sm:text-base md:text-lg text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed opacity-90">
           {RESUME_DATA.summary.short}
         </p>
 

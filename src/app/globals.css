@@ -16,6 +16,10 @@ body {
   background-color: var(--light-color);
 }
 
+section[id] {
+  scroll-margin-top: 4rem;
+}
+
 a {
   color: var(--primary-color);
   text-decoration: none;

@@ -78,7 +78,7 @@ export default function Experience() {
                     </a>
                   </div>
                 </div>
-                <div className="text-right">
+                <div className="text-left md:text-right">
                   <p className="text-gray-600 font-semibold">{job.start} - {job.end}</p>
                   {!!job.badges?.length && (
                     <div className="flex flex-wrap justify-end gap-2 mt-2">
@@ -98,7 +98,9 @@ export default function Experience() {
               {/* Technologies */}
               {Array.isArray((job as any).technologies) && (job as any).technologies.length > 0 && (
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wider">Tech Stack</h4>
+                  <h4 className="text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wider">
+                    {t("common.technicalStack")}
+                  </h4>
                   <div className="flex flex-wrap gap-2">
                     {(job as any).technologies.map((tech: string) => (
                       <span
@@ -115,7 +117,9 @@ export default function Experience() {
               {/* Achievements */}
               {job.achievements && job.achievements.length > 0 && (
                 <div className="mb-0">
-                  <h4 className="text-sm font-semibold text-gray-900 mb-4 uppercase tracking-wider border-t pt-4">Key Impact & Ownership</h4>
+                  <h4 className="text-sm font-semibold text-gray-900 mb-4 uppercase tracking-wider border-t pt-4">
+                    {locale === "es" ? "Impacto y Responsabilidad" : "Key Impact & Ownership"}
+                  </h4>
                   <ul className="space-y-3">
                     {job.achievements.map((achievement, i) => (
                       <li key={i} className="flex items-start gap-3 pb-3 border-b border-gray-100 last:border-b-0">

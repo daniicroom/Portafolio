@@ -85,7 +85,9 @@ export default function Portfolio() {
 
                 {/* Tech Stack */}
                 <div className="mb-4">
-                  <p className="text-xs font-semibold text-gray-700 mb-2 uppercase tracking-wider">Technologies</p>
+                  <p className="text-xs font-semibold text-gray-700 mb-2 uppercase tracking-wider">
+                    {t("common.technicalStack")}
+                  </p>
                   <div className="flex flex-wrap gap-2">
                     {project.techStack?.map((tech) => (
                       <span
@@ -101,7 +103,9 @@ export default function Portfolio() {
                 {/* Impact */}
                 {project.impact && project.impact.length > 0 && (
                   <div className="mb-4 pb-4 border-t border-gray-200">
-                    <p className="text-xs font-semibold text-gray-700 mb-2 uppercase tracking-wider">Impact</p>
+                    <p className="text-xs font-semibold text-gray-700 mb-2 uppercase tracking-wider">
+                      {locale === "es" ? "Impacto" : "Impact"}
+                    </p>
                     <ul className="space-y-1">
                       {project.impact.map((item, i) => (
                         <li key={i} className="text-sm text-gray-700 flex items-start">
@@ -121,7 +125,7 @@ export default function Portfolio() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {project.link.label || "View Project"}
+                    {project.link.label || t("common.viewProject")}
                     <FiExternalLink className="ml-2 w-4 h-4" />
                   </a>
                 )}

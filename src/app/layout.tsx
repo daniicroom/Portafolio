@@ -68,7 +68,7 @@ export default async function RootLayout({
           <LanguageProvider initialLocale="en">
             <div className="flex min-h-screen">
               <Sidebar />
-              <main className="flex-1 p-4 md:p-8 relative">
+              <main className="relative min-w-0 flex-1 md:ml-64 lg:ml-72">
                 {children}
               </main>
             </div>

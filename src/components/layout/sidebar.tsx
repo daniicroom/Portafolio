@@ -11,6 +11,7 @@ import { useLanguage } from "../providers/LanguageProvider";
 import { FiHome, FiUser, FiGrid, FiMail, FiMenu, FiX } from "react-icons/fi";
 import { PiStudent, PiCertificate } from "react-icons/pi";
 import { MdWork } from "react-icons/md";
+import { useTranslations } from "next-intl";
 
 const ICON_MAP: Record<string, React.ElementType> = {
   Home: FiHome,
@@ -24,6 +25,7 @@ const ICON_MAP: Record<string, React.ElementType> = {
 };
 
 export default function Sidebar() {
+  const t = useTranslations();
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -93,11 +95,7 @@ export default function Sidebar() {
 
   if (!mounted) {
     return (
-      <>
-        {/* Desktop Sidebar Placeholder */}
-        <aside className="hidden md:block fixed top-0 left-0 h-full w-64 lg:w-72 bg-[#040b14] text-white z-30" />
-        <div className="md:ml-64 lg:ml-72" />
-      </>
+      <aside className="hidden md:block fixed top-0 left-0 h-full w-64 lg:w-72 bg-[#040b14] text-white z-30" />
     );
   }
 
@@ -120,6 +118,12 @@ export default function Sidebar() {
       const IconComponent = ICON_MAP[item.label];
       const sectionId = item.href === "/" ? "hero" : item.href.replace("#", "");
       const isActive = activeSection === sectionId;
+      const labelKey =
+        item.label === "Certification"
+          ? "certification"
+          : item.label === "Resume"
+            ? "resume"
+            : item.label.toLowerCase();
 
       return (
         <Link
@@ -128,12 +132,12 @@ export default function Sidebar() {
           className={`flex items-center p-3 rounded-lg transition-colors ${
             isActive
               ? "bg-blue-100 text-blue-600"
-              : "text-gray-700 hover:bg-gray-100"
+              : "text-gray-300 hover:bg-white/10 hover:text-white"
           }`}
           onClick={() => handleNavClick(item)}
         >
           {IconComponent && <IconComponent className="w-5 h-5 mr-3" />}
-          <span>{item.label}</span>
+          <span>{t(`navigation.${labelKey}`)}</span>
         </Link>
       );
     });
@@ -217,9 +221,6 @@ export default function Sidebar() {
           </nav>
         </div>
       </aside>
-
-      {/* Main content offset */}
-      <div className={`${isMobileMenuOpen ? 'md:ml-0' : 'md:ml-64 lg:ml-72'}`} />
     </>
   );
 }

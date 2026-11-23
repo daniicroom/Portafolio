@@ -69,7 +69,7 @@ export default function Contact() {
             <div className="text-4xl text-primary mb-4">
               <FiPhone className="mx-auto" />
             </div>
-            <h3 className="text-xl font-bold mb-2">Phone</h3>
+            <h3 className="text-xl font-bold mb-2">{t("common.phone")}</h3>
             <p className="text-gray-600">{RESUME_DATA.contact?.tel ?? ""}</p>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function Contact() {
             <input
               type="text"
               name="name"
-              placeholder="Your Name"
+              placeholder={t("sections.contact.name")}
               value={formData.name}
               onChange={handleChange}
               required
@@ -88,7 +88,7 @@ export default function Contact() {
             <input
               type="email"
               name="email"
-              placeholder="Your Email"
+              placeholder={t("sections.contact.email")}
               value={formData.email}
               onChange={handleChange}
               required
@@ -98,14 +98,14 @@ export default function Contact() {
           <input
             type="text"
             name="subject"
-            placeholder="Subject"
+            placeholder={t("sections.contact.subject")}
             value={formData.subject}
             onChange={handleChange}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg mb-6 focus:outline-none focus:ring-2 focus:ring-primary"
           />
           <textarea
             name="message"
-            placeholder="Your Message"
+            placeholder={t("sections.contact.message")}
             rows={5}
             value={formData.message}
             onChange={handleChange}
@@ -142,7 +142,7 @@ export default function Contact() {
                 />
               </svg>
             )}
-            {isLoading ? "Sending..." : "Send Message"}
+            {isLoading ? t("sections.contact.sending") : t("sections.contact.send")}
           </button>
         </form>
       </div>
