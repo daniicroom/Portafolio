@@ -41,7 +41,7 @@ export const RESUME_DATA_EN = {
       "Senior Full Stack .NET Engineer specialized in SaaS platforms, automation, distributed architecture, and enterprise integrations.",
 
     full:
-      "Systems Engineer with more than 4 years of experience in software development, technical leadership, and enterprise platform engineering. Specialized in multi-tenant SaaS architecture, REST APIs, microservices, CI/CD automation, systems integration, and scalable cloud solutions on AWS and Azure.\n\n" +
+      "Systems Engineer with 5 years of experience in software development, technical leadership, and enterprise platform engineering. Specialized in multi-tenant SaaS architecture, REST APIs, microservices, CI/CD automation, systems integration, and scalable cloud solutions on AWS and Azure.\n\n" +
       "Experience designing distributed systems using queues, workers, and asynchronous processing with RabbitMQ, and Redis. Knowledge of SSO/OIDC authentication, workflow automation, and developer productivity optimization through Applied AI, Claude Code, MCP Servers, agentic systems, and n8n.\n\n" +
       "Strong ability to lead technical teams, participate in architectural decision-making, optimize critical deployments, and build business-oriented solutions.",
   },

@@ -20,7 +20,7 @@ export const RESUME_DATA_ES = {
     initials: "JV",
 
     title:
-      "Senior Full Stack .NET Engineer | Lead Product Developer",
+      "Ingeniero Full Stack .NET Senior | Líder de Desarrollo de Productos",
 
     specialty:
       "Arquitectura SaaS, Integraciones Empresariales, Cloud, Automatización e IA aplicada",
@@ -38,10 +38,10 @@ export const RESUME_DATA_ES = {
 
   summary: {
     short:
-      "Senior Full Stack .NET Engineer especializado en plataformas SaaS, automatización, arquitectura distribuida e integración empresarial.",
+      "Ingeniero Full Stack .NET senior especializado en plataformas SaaS, automatización, arquitectura distribuida e integración empresarial.",
 
     full:
-      "Ingeniero de Sistemas con más de 4 años de experiencia desarrollando plataformas SaaS empresariales y soluciones distribuidas sobre AWS y Azure.\n\n" +
+      "Ingeniero de Sistemas con 5 años de experiencia desarrollando plataformas SaaS empresariales y soluciones distribuidas sobre AWS y Azure.\n\n" +
       "Especializado en arquitectura multi-tenant, APIs REST, microservicios, CI/CD, mensajería asíncrona y escalabilidad utilizando RabbitMQ, Redis y procesamiento background.\n\n" +
       "Experiencia liderando equipos técnicos, diseñando integraciones empresariales y optimizando productividad mediante IA aplicada, Claude Code, MCP Servers y automatización de workflows.",
   },
